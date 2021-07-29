@@ -31,6 +31,8 @@ lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
+lvim.builtin.nvimtree.hide_dotfiles = 0
+lvim.builtin.nvimtree.auto_close = 1
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -96,6 +98,11 @@ lvim.plugins = {
     event = "InsertEnter",
   },
 }
+
+lvim.lang.typescript.formatter.exe = "eslint_d"
+lvim.lang.typescript.linters = { "eslint" }
+lvim.lang.vue.formatter.exe = "eslint_d"
+lvim.lang.vue.linters = { "eslint" }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- lvim.autocommands.custom_groups = {
