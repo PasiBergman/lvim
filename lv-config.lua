@@ -110,3 +110,8 @@ lvim.lang.vue.linters = { "eslint" }
 -- }
 
 -- Additional Leader bindings for WhichKey
+
+-- https://github.com/nvim-telescope/telescope.nvim/issues/605#issuecomment-790805956
+vim.api.nvim_set_keymap("n", "<space>Gla", "<cmd>lua require('my.telescope').my_git_commits()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<space>Glc", "<cmd>lua require('my.telescope').my_git_bcommits()<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<space>Gs", "<cmd>lua require('my.telescope').my_git_status()<cr>", { noremap = true, silent = true })
