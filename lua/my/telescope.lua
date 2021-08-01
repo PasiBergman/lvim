@@ -1,8 +1,12 @@
 -- Implement delta as previewer for diffs
 
+-- Requires git-delta, e.g. on macOS
+-- brew install git-delta
+
 local previewers = require('telescope.previewers')
 local builtin = require('telescope.builtin')
 -- local conf = require('telescope.config')
+
 local E = {}
 
 local delta = previewers.new_termopen_previewer {
