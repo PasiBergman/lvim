@@ -47,6 +47,8 @@ lvim.builtin.which_key.mappings["L"] = {
   },
 }
 
+lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope grep_string<cr>", "Grep cursor word" }
+
 lvim.builtin.which_key.mappings["d"] = {
   name = "+Diagnotics",
   t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
@@ -57,6 +59,13 @@ lvim.builtin.which_key.mappings["d"] = {
   r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 }
 
+lvim.builtin.which_key.mappings["S"] = {
+  name = "+Sessions",
+  s = { "<cmd>lua require('my.keymaps').save_session()<cr>", "Save" },
+  o = { "<cmd>lua require('my.keymaps').open_session()<cr>", "Open" },
+  r = { "<cmd>lua require('my.keymaps').remove_session()<cr>", "Remove" },
+  l = { "<cmd>lua require('my.keymaps').list_sessions()<cr>", "List" },
+}
 -- overwrite the key-mappings provided by LunarVim for any mode, or leave it empty to keep them
 -- lvim.builtin.which_key.mappings[]
 --   Page down/up
@@ -77,3 +86,39 @@ lvim.builtin.which_key.mappings["d"] = {
 -- lvim.autocommands.custom_groups = {
 --   { "BufWinEnter", "*.cs", "setlocal ts=4 sw=4" },
 -- }
+
+M = {}
+
+M.save_session = function()
+  local name = vim.fn.input "Save session: "
+  if name ~= "" then
+    local command = "mksession! ~/.cache/nvim/sessions/" .. name
+    vim.cmd(command)
+    vim.cmd('echo "Session ' .. name .. ' saved."')
+  end
+end
+
+M.open_session = function()
+  local name = vim.fn.input "Open session: "
+  if name ~= "" then
+    local command = "source ~/.cache/nvim/sessions/" .. name
+    vim.cmd(command)
+    vim.cmd('echo "Session ' .. name .. ' sourced."')
+  end
+end
+
+M.remove_session = function()
+  local name = vim.fn.input "Delete session: "
+  if name ~= "" then
+    local command = "!rm ~/.cache/nvim/sessions/" .. name
+    vim.cmd(command)
+    vim.cmd('echo "Session ' .. name .. ' removed."')
+  end
+end
+
+M.list_sessions = function()
+  local command = "!ls ~/.cache/nvim/sessions/ | xargs"
+  vim.cmd(command)
+end
+
+return M
