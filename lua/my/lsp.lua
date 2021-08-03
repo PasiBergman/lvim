@@ -10,10 +10,9 @@ local sh_linter = "shellcheck"
 
 local use_eslint_fix = true
 --
--- Does package.json file contain speficied property (e.g. "prettier")?
+-- Does package.json file contain speficied configuration (e.g. "prettier")?
 --
 local in_package_json = function(field)
-  print "function in_package_json"
   if vim.fn.filereadable "package.json" ~= 0 then
     local package_json = vim.fn.json_decode(vim.fn.readfile "package.json")
     return (package_json[field] ~= nil)
