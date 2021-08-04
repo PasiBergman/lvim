@@ -6,6 +6,8 @@ lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.nvimtree.auto_close = 1
 
+-- lvim.builtin.rooter.active = false
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
 lvim.builtin.treesitter.ignore_install = {

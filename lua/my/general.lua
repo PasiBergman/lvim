@@ -6,4 +6,8 @@ lvim.colorscheme = "spacegray"
 -- keymappings
 lvim.leader = "space"
 
-vim.cmd [[let g:auto_session_root_dir = "~/.cache/nvim/sessions"]]
+-- debug
+lvim.debug = true
+
+-- Set session directory
+vim.g.auto_session_root_dir = vim.fn.expand "$HOME/.cache/nvim/sessions"
