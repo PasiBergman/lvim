@@ -2,6 +2,7 @@
 -- Set preferred linters and formatters
 --
 local lua_formatter = "stylua"
+local cs_formatter = "clang_format"
 local prettier = "prettier"
 
 local js_linter = "eslint_d"
@@ -49,12 +50,11 @@ end
 --
 -- Lua formatter
 --
-lvim.lang.lua.formatters = {
-  {
-    exe = lua_formatter,
-    args = {},
-  },
-}
+lvim.lang.lua.formatters = { { exe = lua_formatter } }
+--
+-- C# (cs) formatter (Note! Use omnisharp LSP or dotnet-format instead of clang_format)
+--
+lvim.lang.cs.formatters = { { exe = cs_formatter } }
 --
 -- Setup formatters for JavaScript family
 --
