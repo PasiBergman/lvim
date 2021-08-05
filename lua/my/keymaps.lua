@@ -12,7 +12,11 @@ vim.api.nvim_set_keymap("n", "?", "?<C-g>u", { noremap = true, silent = true })
 -- Move text
 vim.api.nvim_set_keymap("v", "J", "'>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "K", "'<-2<CR>gv=gv", { noremap = true, silent = true })
+-- Paste last yanked (not deleted) register
+vim.api.nvim_set_keymap("n", ",p", '"0p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", ",P", '"0P', { noremap = true, silent = true })
 
+-- Which-key: Quickfix
 lvim.builtin.which_key.mappings["q"] = {
   name = "+QuickFix",
   o = { "<cmd>copen<cr>", "Open" },
@@ -30,6 +34,7 @@ lvim.builtin.which_key.mappings["q"] = {
   },
 }
 
+-- Which-key: Location list
 lvim.builtin.which_key.mappings["L"] = {
   name = "+Location list",
   o = { "<cmd>lopen<cr>", "Open" },
@@ -47,8 +52,11 @@ lvim.builtin.which_key.mappings["L"] = {
   },
 }
 
+-- Which-key: +Search
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope grep_string<cr>", "Grep cursor word" }
+lvim.builtin.which_key.mappings["sG"] = { "<cmd>Telescope git_files<cr>", "Git files" }
 
+-- Which-key: +Diagnostics
 lvim.builtin.which_key.mappings["d"] = {
   name = "+Diagnotics",
   t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
@@ -59,6 +67,7 @@ lvim.builtin.which_key.mappings["d"] = {
   r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 }
 
+-- Which-key: +Sessions
 lvim.builtin.which_key.mappings["S"] = {
   name = "+Sessions",
   s = { "<cmd>lua require('my.keymaps').save_session()<cr>", "Save" },
@@ -66,6 +75,10 @@ lvim.builtin.which_key.mappings["S"] = {
   r = { "<cmd>lua require('my.keymaps').remove_session()<cr>", "Remove" },
   l = { "<cmd>lua require('my.keymaps').list_sessions()<cr>", "List" },
 }
+
+-- Which-key: Zen-Mode
+lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" }
+
 -- overwrite the key-mappings provided by LunarVim for any mode, or leave it empty to keep them
 -- lvim.builtin.which_key.mappings[]
 --   Page down/up
