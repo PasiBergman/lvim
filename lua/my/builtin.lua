@@ -38,5 +38,25 @@ lvim.builtin.telescope.on_config_done = function()
   require("telescope").load_extension "fzy_native"
 end
 lvim.builtin.telescope.defaults.layout_strategy = "vertical"
-lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 90
-lvim.builtin.telescope.defaults.layout_config.width = 0.80
+lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 60
+lvim.builtin.telescope.defaults.layout_config.width = 0.85
+local actions = require "telescope.actions"
+local mappings = {
+  i = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+    ["<C-c>"] = actions.close,
+    ["<C-n>"] = actions.cycle_history_next,
+    ["<C-p>"] = actions.cycle_history_prev,
+    ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+    ["<CR>"] = actions.select_default + actions.center,
+  },
+  n = {
+    ["<C-j>"] = actions.move_selection_next,
+    ["<C-k>"] = actions.move_selection_previous,
+    ["<C-n>"] = actions.cycle_history_next,
+    ["<C-p>"] = actions.cycle_history_prev,
+    ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+  },
+}
+lvim.builtin.telescope.defaults.mappings = mappings
