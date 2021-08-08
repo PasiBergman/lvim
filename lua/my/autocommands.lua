@@ -1,4 +1,4 @@
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.cs", "setlocal ts=4 sw=4" },
--- }
+lvim.autocommands.custom_groups = {
+  { "BufWinEnter", "*", [[lua require "my.highlights"]] },
+}

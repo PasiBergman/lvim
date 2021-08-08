@@ -1,7 +1,7 @@
 -- General lvim configuration
 require "my.general"
 
--- Builtin configuration
+--  Builtin configuration
 require "my.builtin"
 
 -- Additional Plugins
@@ -18,3 +18,12 @@ require "my.lsp"
 
 -- Additional JSON schemas
 require("my.json-schemas").setup()
+
+-- Highlight
+require "my.highlights"
+
+-- Treesitter
+require "my.treesitter"
+
+-- Telescope
+require("my.telescope").setup_mappings()
