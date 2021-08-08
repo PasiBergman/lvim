@@ -35,6 +35,7 @@ lvim.builtin.which_key.mappings["q"] = {
 }
 
 -- Which-key: Location list
+--[[
 lvim.builtin.which_key.mappings["L"] = {
   name = "+Location list",
   o = { "<cmd>lopen<cr>", "Open" },
@@ -51,6 +52,7 @@ lvim.builtin.which_key.mappings["L"] = {
     "Item...",
   },
 }
+--]]
 
 -- Which-key: +Search
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope grep_string<cr>", "Grep cursor word" }
@@ -78,6 +80,9 @@ lvim.builtin.which_key.mappings["S"] = {
 
 -- Which-key: Zen-Mode
 lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" }
+
+-- Which-key: Kitty config
+lvim.builtin.which_key.mappings["K"] = { "<cmd>edit ~/.config/kitty/kitty.conf<cr>", "Kitty conf" }
 
 -- overwrite the key-mappings provided by LunarVim for any mode, or leave it empty to keep them
 -- lvim.builtin.which_key.mappings[]
