@@ -11,6 +11,9 @@ lvim.plugins = {
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
       require("trouble").setup {}
+      local trouble = require "trouble.providers.telescope"
+      lvim.builtin.telescope.defaults.mappings.i["<C-t>"] = trouble.open_with_trouble
+      lvim.builtin.telescope.defaults.mappings.n["<C-t>"] = trouble.open_with_trouble
     end,
     event = "BufWinEnter",
   },
