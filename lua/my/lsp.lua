@@ -35,7 +35,7 @@ local get_js_formatters = function()
     exe = js_linter,
     args = {},
   }
-  if js_linter == "eslint_d" and use_eslint_fix == true then
+  if use_eslint_fix == true then
     table.insert(formatters, eslint_fix)
   end
   if project_has_prettier_config() == true then
