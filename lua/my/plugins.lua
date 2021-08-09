@@ -1,7 +1,7 @@
 lvim.plugins = {
   -- { "folke/tokyonight.nvim" },
   -- { 'projekt0n/github-nvim-theme' },
-  -- { "rafamadriz/neon" },
+  { "maaslalani/nordbuddy" },
   {
     "rizzatti/dash.vim",
     event = "BufWinEnter",

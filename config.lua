@@ -1,3 +1,6 @@
+-- Colors
+require "my.colors"
+
 -- General lvim configuration
 require "my.general"
 

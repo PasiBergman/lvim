@@ -1,7 +1,8 @@
 -- general
 lvim.format_on_save = true
 lvim.lint_on_save = true
-lvim.colorscheme = "spacegray"
+-- lvim.colorscheme = "spacegray"
+lvim.colorscheme = "nordbuddy"
 
 -- keymappings
 lvim.leader = "space"
