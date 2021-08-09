@@ -27,6 +27,3 @@ require "my.highlights"
 
 -- Treesitter
 require "my.treesitter"
-
--- Telescope
-require("my.telescope").setup_mappings()
