@@ -1,4 +1,5 @@
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 lvim.autocommands.custom_groups = {
-  { "BufWinEnter", "*", [[lua require "my.highlights"]] },
+  { "BufEnter", "*", "lua require'my.highlights'" },
+  { "InsertEnter", "*", "highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#88c0d0 guibg=#8091b2" },
 }

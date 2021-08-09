@@ -19,3 +19,6 @@ lvim.debug = true
 -- kitty
 -- https://sw.kovidgoyal.net/kitty/faq/#some-special-symbols-are-rendered-small-truncated-in-kitty
 vim.cmd [[let &t_ut='']]
+
+-- Set relative row numbers
+vim.cmd [[set relativenumber]]

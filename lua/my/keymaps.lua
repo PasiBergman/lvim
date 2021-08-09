@@ -78,6 +78,13 @@ lvim.builtin.which_key.mappings["S"] = {
   l = { "<cmd>lua require('my.keymaps').list_sessions()<cr>", "List" },
 }
 
+-- Which-key: +Terimnal
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  b = { "<cmd>split term://zsh<cr>", "Terminal to below" },
+  r = { "<cmd>vsplit term://zsh<cr>", "Terminal to right" },
+}
+
 -- Which-key: Zen-Mode
 lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" }
 
