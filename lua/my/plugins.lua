@@ -1,7 +1,25 @@
 lvim.plugins = {
+  {
+    "maaslalani/nordbuddy",
+    config = function()
+      require("nordbuddy").colorscheme {
+        -- Underline style used for spelling
+        -- Options: 'none', 'underline', 'undercurl'
+        underline_option = "undercurl",
+        -- Italics for certain keywords such as constructors, functions,
+        -- labels and namespaces
+        italic = true,
+        -- Italic styled comments
+        italic_comments = false,
+        -- Minimal mode: different choice of colors for Tabs and StatusLine
+        minimal_mode = false,
+      }
+    end,
+  },
+  -- { "shaunsingh/nord.nvim" },
   -- { "folke/tokyonight.nvim" },
+  ---{ "rafamadriz/neon" },
   -- { 'projekt0n/github-nvim-theme' },
-  { "maaslalani/nordbuddy" },
   {
     "rizzatti/dash.vim",
     event = "BufWinEnter",

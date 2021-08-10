@@ -37,9 +37,9 @@ lvim.builtin.telescope.extensions = {
 lvim.builtin.telescope.on_config_done = function()
   require("telescope").load_extension "fzy_native"
 end
-lvim.builtin.telescope.defaults.layout_strategy = "vertical"
-lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 60
-lvim.builtin.telescope.defaults.layout_config.width = 0.85
+lvim.builtin.telescope.defaults.layout_strategy = "horizontal"
+lvim.builtin.telescope.defaults.layout_config.preview_cutoff = 80
+lvim.builtin.telescope.defaults.layout_config.width = 0.95
 local actions = require "telescope.actions"
 local mappings = {
   i = {

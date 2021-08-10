@@ -11,3 +11,4 @@ vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#88c0d0 guibg=
 -- Bufferline
 vim.cmd [[highlight BufferVisibleMod guifg=#88c0d0 guibg=#4c566a]]
 vim.cmd [[highlight BufferCurrentMod guifg=#88c0d0 guibg=#2e3440 gui=bold]]
+vim.cmd [[highlight BufferInactiveMod guifg=#88c0d0 guibg=#3b4252]]
