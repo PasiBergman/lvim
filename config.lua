@@ -27,3 +27,6 @@ require "my.highlights"
 
 -- Treesitter
 require "my.treesitter"
+
+-- Configure tailwindcss language server
+require "my.tailwindcss"

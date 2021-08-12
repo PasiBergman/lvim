@@ -8,7 +8,7 @@ lvim.plugins = {
         underline_option = "undercurl",
         -- Italics for certain keywords such as constructors, functions,
         -- labels and namespaces
-        italic = true,
+        italic = false,
         -- Italic styled comments
         italic_comments = false,
         -- Minimal mode: different choice of colors for Tabs and StatusLine

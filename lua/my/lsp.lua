@@ -2,7 +2,7 @@
 -- Set preferred linters and formatters
 --
 local lua_formatter = "stylua"
-local cs_formatter = "clang_format"
+-- local cs_formatter = "clang_format"
 local prettier = "prettier"
 
 local js_linter = "eslint_d"
@@ -52,9 +52,9 @@ end
 --
 lvim.lang.lua.formatters = { { exe = lua_formatter } }
 --
--- C# (cs) formatter (Note! Use omnisharp LSP or dotnet-format instead of clang_format)
+-- C# (cs) formatter. Note! Setting cs.formatter will disable language server (OmniSharp) formatting
 --
-lvim.lang.cs.formatters = { { exe = cs_formatter } }
+-- lvim.lang.cs.formatters = { { exe = cs_formatter } }
 --
 -- Setup formatters for JavaScript family
 --
