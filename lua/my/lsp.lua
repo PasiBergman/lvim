@@ -2,6 +2,7 @@
 -- Set preferred linters and formatters
 --
 local lua_formatter = "stylua"
+local lua_linter = "luacheck"
 -- local cs_formatter = "clang_format"
 local prettier = "prettier"
 
@@ -48,9 +49,12 @@ local get_js_formatters = function()
   return formatters
 end
 --
--- Lua formatter
+-- Lua formatter & linter
 --
 lvim.lang.lua.formatters = { { exe = lua_formatter } }
+if lua_linter ~= "" then
+  lvim.lang.lua.linters = { { exe = lua_linter } }
+end
 --
 -- C# (cs) formatter. Note! Setting cs.formatter will disable language server (OmniSharp) formatting
 --
