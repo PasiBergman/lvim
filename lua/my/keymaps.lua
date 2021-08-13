@@ -34,33 +34,18 @@ lvim.builtin.which_key.mappings["q"] = {
   },
 }
 
--- Which-key: Location list
---[[
-lvim.builtin.which_key.mappings["L"] = {
-  name = "+Location list",
-  o = { "<cmd>lopen<cr>", "Open" },
-  c = { "<cmd>lclose<cr>", "Close" },
-  n = { "<cmd>lnext<cr>", "Next item" },
-  p = { "<cmd>lprev<cr>", "Previous item" },
-  f = { "<cmd>lfirst<cr>", "First item" },
-  l = { "<cmd>llast<cr>", "Last item" },
-  i = {
-    function()
-      local itemNr = vim.fn.input "Loclist item# "
-      vim.cmd("ll" .. itemNr)
-    end,
-    "Item...",
-  },
-}
---]]
+-- lvim.builtin.which_key.mappings["f"] = { "<cmd>Telescope find_files --hidden<cr>", "Find file" }
 
 -- Which-key: +Search
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope grep_string<cr>", "Grep cursor word" }
 lvim.builtin.which_key.mappings["sG"] = { "<cmd>Telescope git_files<cr>", "Git files" }
 
+-- Which-key: +Git
+lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua required('gitlinker').get_buf_range_url('n')<cr>", "Gitlinker" }
+
 -- Which-key: +Diagnostics
 lvim.builtin.which_key.mappings["d"] = {
-  name = "+Diagnotics",
+  name = "+Diagnotics (Trouble)",
   t = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
   w = { "<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "Workspace" },
   d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document" },
@@ -112,6 +97,7 @@ lvim.builtin.which_key.mappings["K"] = { "<cmd>edit ~/.config/kitty/kitty.conf<c
 --   { "BufWinEnter", "*.cs", "setlocal ts=4 sw=4" },
 -- }
 
+--[[
 M = {}
 
 M.save_session = function()
@@ -147,3 +133,4 @@ M.list_sessions = function()
 end
 
 return M
+--]]
