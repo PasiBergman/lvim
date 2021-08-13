@@ -3,21 +3,29 @@
 --
 local lua_formatter = "stylua"
 local lua_linter = "luacheck"
--- local cs_formatter = "clang_format"
+local cs_formatter = nil -- i.e. use OmniSharp language server
 local prettier = "prettier"
-
 local js_linter = "eslint_d"
 local css_linter = "stylelint" -- stylelint not supported yet
 local sh_linter = "shellcheck"
-
-local use_eslint_fix = true
 --
--- Does package.json file contain speficied configuration (e.g. "prettier")?
+-- Does package.json file contain speficied configuration or dependency?
+-- (e.g. "prettier")
 --
 local in_package_json = function(field)
-  if vim.fn.filereadable "package.json" ~= 0 then
+  if vim.fn.filereadable(vim.fn.getcwd() .. "/package.json") ~= 0 then
     local package_json = vim.fn.json_decode(vim.fn.readfile "package.json")
-    return (package_json[field] ~= nil)
+    if package_json[field] ~= nil then
+      return true
+    end
+    local dev_dependencies = package_json["devDependencies"]
+    if dev_dependencies[field] ~= nil then
+      return true
+    end
+    local dependencies = package_json["dependencies"]
+    if dependencies[field] ~= nil then
+      return true
+    end
   end
   return false
 end
@@ -32,19 +40,19 @@ end
 --
 local get_js_formatters = function()
   local formatters = {}
-  local eslint_fix = {
-    exe = js_linter,
-    args = {},
-  }
-  if use_eslint_fix == true then
+  if js_linter ~= nil and js_linter ~= "" then
+    local eslint_fix = { exe = js_linter }
     table.insert(formatters, eslint_fix)
   end
+  if prettier == nil or prettier == "" then
+    return formatters
+  end
   if project_has_prettier_config() == true then
-    local prettier_fmt = {
-      exe = prettier,
-      args = {},
-    }
+    print "Adding prettier"
+    local prettier_fmt = { exe = prettier }
     table.insert(formatters, prettier_fmt)
+  else
+    print "Not adding prettier"
   end
   return formatters
 end
@@ -58,7 +66,9 @@ end
 --
 -- C# (cs) formatter. Note! Setting cs.formatter will disable language server (OmniSharp) formatting
 --
--- lvim.lang.cs.formatters = { { exe = cs_formatter } }
+if cs_formatter ~= nil and cs_formatter ~= "" then
+  lvim.lang.cs.formatters = { { exe = cs_formatter } }
+end
 --
 -- Setup formatters for JavaScript family
 --
