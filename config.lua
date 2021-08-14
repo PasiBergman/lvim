@@ -30,3 +30,6 @@ require "my.treesitter"
 
 -- Configure tailwindcss language server
 require "my.tailwindcss"
+
+-- Commands etc
+require "my.commands"

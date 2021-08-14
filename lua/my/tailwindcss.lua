@@ -1,17 +1,22 @@
+--
+-- Configure tailwindcss lsp only if project seems to have a tailwindcss dependency
+--
+local utils = require "my.utils"
+local project_has_tailwinds_dependency = function()
+  return (vim.fn.glob "tailwind*" ~= "" or utils.is_in_package_json "tailwindcss")
+end
+
+if not project_has_tailwinds_dependency() then
+  return
+end
+
 local lsp = require "lsp"
--- Only needed for the root_dir custom setup
-local lsputil = require "lspconfig.util"
 require("lspconfig").tailwindcss.setup {
   cmd = {
     "node",
     DATA_PATH .. "/lspinstall/tailwindcss/tailwindcss-intellisense/extension/dist/server/tailwindServer.js",
     "--stdio",
   },
-  -- IMPORTANT
-  -- Custom setup for root_dir is not typically needed
-  -- In this case, I want to enable tailwindcss LS only on special cases
-  -- and in this case root_dir is used to control the activation.
-  root_dir = lsputil.root_pattern("tailwind.config.js", "postcss.config.ts", ".postcssrc"),
   on_attach = lsp.common_on_attach,
   on_init = lsp.common_on_init,
 }

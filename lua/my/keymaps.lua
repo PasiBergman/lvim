@@ -16,6 +16,12 @@ vim.api.nvim_set_keymap("v", "K", "'<-2<CR>gv=gv", { noremap = true, silent = tr
 vim.api.nvim_set_keymap("n", ",p", '"0p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", ",P", '"0P', { noremap = true, silent = true })
 
+-- See lua/my/commands.lua
+vim.api.nvim_set_keymap("n", "<F5>", "<esc>:ExecSh<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F6>", "<esc>:ExecVsh<cr>", { noremap = true, silent = true })
+-- Close buffers with name "No name"
+vim.api.nvim_set_keymap("n", "<F7>", [[<esc>:bdel! "No name"<cr>]], { noremap = true, silent = true })
+
 -- Which-key: Quickfix
 lvim.builtin.which_key.mappings["q"] = {
   name = "+QuickFix",
