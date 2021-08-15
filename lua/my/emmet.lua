@@ -14,7 +14,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 if not lspconfig.emmet_ls then
   configs.emmet_ls = {
     default_config = {
-      cmd = { "emmet-ls", "--stdio" },
+      cmd = { DATA_PATH .. "/lspinstall/emmet/node_modules/.bin/emmet-ls", "--stdio" },
       filetypes = {
         "aspnetcorerazor",
         "css",
@@ -23,7 +23,6 @@ if not lspconfig.emmet_ls then
         "haml",
         "hbs",
         "html",
-        "javascriptreact",
         "less",
         "php",
         "postcss",
@@ -31,7 +30,6 @@ if not lspconfig.emmet_ls then
         "sass",
         "scss",
         "svelte",
-        "typescriptreact",
         "vue",
       },
       root_dir = function(_)
