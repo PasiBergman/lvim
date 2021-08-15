@@ -24,4 +24,8 @@ utils.is_in_package_json = function(field)
   return false
 end
 
+utils.is_web_project = function()
+  return (vim.fn.glob "package.json" ~= "" or vim.fn.glob "yarn.lock" ~= "" or vim.fn.glob "node_modules" ~= "")
+end
+
 return utils

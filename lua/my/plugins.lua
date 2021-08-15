@@ -16,6 +16,7 @@ lvim.plugins = {
       }
     end,
   },
+  { "sainnhe/sonokai" },
   -- { "shaunsingh/nord.nvim" },
   -- { "folke/tokyonight.nvim" },
   ---{ "rafamadriz/neon" },

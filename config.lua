@@ -1,5 +1,6 @@
--- Colors
+-- Colors and colorscheme options
 require "my.colors"
+require "my.colorschemes"
 
 -- General lvim configuration
 require "my.general"
@@ -28,8 +29,11 @@ require "my.highlights"
 -- Treesitter
 require "my.treesitter"
 
--- Configure tailwindcss language server
+-- Configure tailwindcss language server (conditionally)
 require "my.tailwindcss"
+
+-- Configure emmet language server (conditionally)
+require "my.emmet"
 
 -- Commands etc
 require "my.commands"

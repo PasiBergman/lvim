@@ -1,3 +1,22 @@
+-- sonokai andromda
+lvim.builtin.galaxyline.colors = {
+  bg = "#2b2d3a",
+  alt_bg = "#3a3e4e",
+  blue = "#6dcae8",
+  cyan = "#f89860",
+  error_red = "#ff4400",
+  green = "#9ed06c",
+  grey = "#858585",
+  hint_blue = "#9CDCFE",
+  info_yellow = "#FFCC66",
+  magenta = "#bb97ee",
+  orange = "#ff9900",
+  purple = "#c586c0",
+  red = "#fb617e",
+  warning_orange = "#ff9900",
+  yellow = "#f0c362",
+}
+
 -- neon
 -- lvim.builtin.galaxyline.colors = require("neon.colors").generate()
 
