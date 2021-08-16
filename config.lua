@@ -1,9 +1,9 @@
--- Colors and colorscheme options
-require "my.colors"
-require "my.colorschemes"
-
 -- General lvim configuration
 require "my.general"
+
+-- Colors and colorscheme options
+require "my.colorschemes"
+require "my.colors"
 
 --  Builtin configuration
 require "my.builtin"
@@ -34,6 +34,3 @@ require "my.emmet"
 
 -- Commands etc
 require "my.commands"
-
--- Highlight
-require "my.highlights"

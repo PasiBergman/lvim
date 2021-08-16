@@ -22,7 +22,6 @@ local configs = require "lspconfig/configs"
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
---[[
 capabilities.textDocument.completion.completionItem.resolveSupport = {
   properties = {
     "documentation",
@@ -30,7 +29,6 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
     "additionalTextEdits",
   },
 }
---]]
 
 if not lspconfig.emmet_ls then
   configs.emmet_ls = {

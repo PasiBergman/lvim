@@ -13,11 +13,11 @@ utils.is_in_package_json = function(field)
       return true
     end
     local dev_dependencies = package_json["devDependencies"]
-    if dev_dependencies[field] ~= nil then
+    if dev_dependencies ~= nil and dev_dependencies[field] ~= nil then
       return true
     end
     local dependencies = package_json["dependencies"]
-    if dependencies[field] ~= nil then
+    if dependencies ~= nil and dependencies[field] ~= nil then
       return true
     end
   end

@@ -14,9 +14,15 @@ lvim.plugins = {
         -- Minimal mode: different choice of colors for Tabs and StatusLine
         minimal_mode = false,
       }
+      require "my.highlights"
     end,
   },
-  { "sainnhe/sonokai" },
+  {
+    "sainnhe/sonokai",
+    config = function()
+      require "my.highlights"
+    end,
+  },
   -- { "shaunsingh/nord.nvim" },
   -- { "folke/tokyonight.nvim" },
   ---{ "rafamadriz/neon" },
