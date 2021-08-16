@@ -1,3 +1,15 @@
+-- ============================================================================
+-- Note! As of Aug 16th 2021, LspInstall does not support installing emmet-ls
+-- The following configuration expects emmet-ls to be locally installed:
+--
+-- $ mkdir -p $HOME/.local/share/nvim/lspinstall/emmet
+-- $ cd $HOME/.local/share/nvim/lspinstall/emmet
+-- $ npm init -y
+-- $ npm install emmet-ls
+-- $ cd -
+--
+-- ============================================================================
+--
 local utils = require "my.utils"
 -- Skip configuring emmet language server client if project
 -- does not look like a web project
@@ -29,8 +41,6 @@ if not lspconfig.emmet_ls then
         "css",
         "django-html",
         "gohtml",
-        "haml",
-        "hbs",
         "html",
         "javascriptreact",
         "less",
