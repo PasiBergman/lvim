@@ -23,9 +23,6 @@ require "my.lsp"
 -- Additional JSON schemas
 require("my.json-schemas").setup()
 
--- Highlight
-require "my.highlights"
-
 -- Treesitter
 require "my.treesitter"
 
@@ -37,3 +34,6 @@ require "my.emmet"
 
 -- Commands etc
 require "my.commands"
+
+-- Highlight
+require "my.highlights"

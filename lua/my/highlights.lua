@@ -18,6 +18,7 @@ end
 --
 -- nordbuddy
 --
+
 if lvim.colorscheme == "nordbuddy" then
   -- Dropdown menu
   vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#88c0d0 guibg=#8091b2]]
