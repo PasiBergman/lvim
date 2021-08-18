@@ -1,8 +1,8 @@
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 lvim.autocommands.custom_groups = {
   { "BufEnter", "*.tmux", "set filetype=sh" },
-  { "BufEnter", "*.vue", "set smartindent=false" },
-  { "BufLeave", "*.vue", "set smartindent=" },
+  { "BufEnter", "*.vue", "set nosmartindent" },
+  { "BufLeave", "*.vue", "set smartindent" },
 }
 
 if lvim.colorscheme == "sonokai" then
