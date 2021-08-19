@@ -51,7 +51,7 @@ M.setup = function()
     {
       description = "Azure pipelines v1.174.2",
       fileMatch = { "azure-pipelines.yml" },
-      url = "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/v1.174.2/service-schema.json",
+      url = "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/main/service-schema.json",
     },
     {
       description = "Bootstrap-loader config",
