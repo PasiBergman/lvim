@@ -139,7 +139,24 @@ lvim.plugins = {
     end,
     requires = "nvim-lua/plenary.nvim",
   },
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+  },
+  {
+    "puremourning/vimspector",
+    config = function()
+      vim.g.vimspector_enable_mappings = "VISUAL_STUDIO"
+    end,
+  },
   --[[
+  {
+    "nvim-telescope/telescope-dap.nvim",
+    after = "telescope.nvim",
+    config = function()
+      require("telescope").load_extension "dap"
+    end,
+  },
   {
     "folke/twilight.nvim",
     config = function()

@@ -17,10 +17,10 @@ vim.api.nvim_set_keymap("n", ",p", '"0p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", ",P", '"0P', { noremap = true, silent = true })
 
 -- See lua/my/commands.lua
-vim.api.nvim_set_keymap("n", "<F5>", ":ExecSh<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<F6>", ":ExecVsh<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F5>", ":ExecSh<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F6>", ":ExecVsh<cr>", { noremap = true, silent = true })
 -- Close buffers with name "No name"
-vim.api.nvim_set_keymap("n", "<F7>", [[:bdel! "No name"<cr>]], { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F7>", [[:bdel! "No name"<cr>]], { noremap = true, silent = true })
 
 -- Which-key: Quickfix
 lvim.builtin.which_key.mappings["q"] = {
@@ -73,6 +73,9 @@ lvim.builtin.which_key.mappings["t"] = {
   b = { "<cmd>split term://zsh<cr>", "Terminal to below" },
   r = { "<cmd>vsplit term://zsh<cr>", "Terminal to right" },
 }
+
+-- Which-key: LSP symbols
+lvim.builtin.which_key.mappings["ls"] = { "<cmd>SymbolsOutline<cr>", "Symbols Outline" }
 
 -- Which-key: Zen-Mode
 lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" }

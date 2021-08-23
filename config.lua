@@ -1,11 +1,12 @@
--- General lvim configuration
 require "my.general"
+-- General lvim configuration
 
 -- Colors and colorscheme options
 require "my.colorschemes"
 require "my.colors"
+require "my.lualine"
 
---  Builtin configuration
+-- Builtin configuration
 require "my.builtin"
 
 -- Additional Plugins
@@ -34,3 +35,8 @@ require "my.emmet"
 
 -- Commands etc
 require "my.commands"
+
+-- Debug (DAP)
+if lvim.builtin.dap.active then
+  require("my.dap").config()
+end

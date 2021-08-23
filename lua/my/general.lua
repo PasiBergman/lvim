@@ -1,13 +1,9 @@
 -- general
 lvim.format_on_save = true
-lvim.lint_on_save = true
 
-lvim.colorscheme = "sonokai"
--- lvim.colorscheme = "nordbuddy"
+-- lvim.colorscheme = "sonokai"
+lvim.colorscheme = "nordbuddy"
 -- lvim.colorscheme = "spacegray"
--- lvim.colorscheme = "nord"
--- lvim.colorscheme = "neon"
--- lvim.colorscheme = "tokyonight"
 
 -- keymappings
 lvim.leader = "space"
@@ -16,10 +12,10 @@ lvim.leader = "space"
 vim.cmd [[set timeoutlen=250]]
 
 -- debug
-lvim.debug = true
+-- lvim.debug = true
 
 -- Set session directory
--- vim.g.dashboard_session_directory = vim.fn.expand "$HOME/.cache/lvim/sessions"
+vim.g.dashboard_session_directory = vim.fn.expand "$HOME/.cache/lvim/sessions"
 
 -- kitty
 -- https://sw.kovidgoyal.net/kitty/faq/#some-special-symbols-are-rendered-small-truncated-in-kitty

@@ -1,12 +1,20 @@
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
-lvim.builtin.terminal.active = true
+lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
 lvim.builtin.nvimtree.hide_dotfiles = 0
 lvim.builtin.nvimtree.auto_close = 1
+lvim.builtin.project.active = false
 
-----  lvim.builtin.rooter.active = true
+-- Disable debugging - using Vimspector for now
+lvim.builtin.dap.active = false
+
+-- Dashboard
+lvim.builtin.dashboard.custom_section.b = {
+  description = { "  Git files          " },
+  command = "Telescope git_files",
+}
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = "maintained"
@@ -60,6 +68,9 @@ local mappings = {
   },
 }
 lvim.builtin.telescope.defaults.mappings = mappings
+
+-- lualine
+-- require "my.lualine"
 
 -- Disable Sumneko Lua Language Server's telemetry
 lvim.lang.lua.lsp.setup.settings.Lua["telemetry"] = { enable = false }

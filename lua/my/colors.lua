@@ -1,3 +1,4 @@
+--[[
 if lvim.colorscheme == "sonokai" then
   -- sonokai andromda
   lvim.builtin.galaxyline.colors = {
@@ -19,10 +20,6 @@ if lvim.colorscheme == "sonokai" then
   }
 end
 
-if lvim.colorscheme == "neon" then
-  lvim.builtin.galaxyline.colors = require("neon.colors").generate()
-end
-
 if lvim.colorscheme == "nordbuddy" then
   -- nordbuddy additions
   lvim.builtin.galaxyline.colors = {
@@ -34,6 +31,10 @@ if lvim.colorscheme == "nordbuddy" then
     magenta = "#b48ead",
     warning_orange = "#FF9900",
   }
+end
+
+if lvim.colorscheme == "neon" then
+  lvim.builtin.galaxyline.colors = require("neon.colors").generate()
 end
 
 if lvim.colorscheme == "tokyonight" then
@@ -88,3 +89,4 @@ if lvim.colorscheme == "nord" then
     white = "#E5E9F0",
   }
 end
+--]]

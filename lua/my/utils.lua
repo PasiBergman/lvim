@@ -28,4 +28,33 @@ utils.is_web_project = function()
   return (vim.fn.glob "package.json" ~= "" or vim.fn.glob "yarn.lock" ~= "" or vim.fn.glob "node_modules" ~= "")
 end
 
+utils.decode_json_file = function(filename)
+  if vim.fn.filereadable(filename) == 0 then
+    return nil
+  end
+
+  return vim.fn.json_decode(vim.fn.readfile(filename))
+end
+
+utils.get_debug_program = function()
+  local dap_config = require("my.utils").decode_json_file(vim.fn.getcwd() .. "/.dap.json")
+  if dap_config ~= nil then
+    local program = dap_config["program"]
+    if program ~= nil then
+      return program
+    end
+  end
+
+  local vimspector_config = require("my.utils").decode_json_file(vim.fn.getcwd() .. "/.vimspector.json")
+  if vimspector_config ~= nil then
+    local config = vimspector_config["configurations"]
+    if config ~= nil then
+      local program = config["launch - netcoredbg"]["configuration"]["program"]
+      return string.gsub(program, "${workspaceRoot}", vim.fn.getcwd())
+    end
+  end
+
+  return vim.fn.input("Path to program: ", vim.fn.getcwd(), "file")
+end
+
 return utils
