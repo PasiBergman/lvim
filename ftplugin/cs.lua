@@ -1,9 +1,9 @@
 vim.cmd [[setlocal ts=4 sw=4]]
 
+if lvim.debug ~= true then return end
+
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
-  local Log = require "core.log"
-  Log:get_default().error "Failed to load Debug Adapter Protocol (dap) plugin (.cs)"
   return
 end
 

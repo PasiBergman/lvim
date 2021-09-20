@@ -12,7 +12,7 @@ lvim.leader = "space"
 vim.cmd [[set timeoutlen=250]]
 
 -- debug
--- lvim.debug = true
+lvim.debug = false
 
 -- Set session directory
 vim.g.dashboard_session_directory = vim.fn.expand "$HOME/.cache/lvim/sessions"
