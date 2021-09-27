@@ -9,7 +9,7 @@ local eslint_exe = "eslint_d"
 local sh_linter = "shellcheck"
 local sh_formatter = "shfmt"
 local cs_formatter = nil -- i.e. use OmniSharp language server
-local css_linter = nil -- change to stylelint when supported
+local css_linter = "stylelint"
 --
 -- Does the current working directory (project) have a Prettier configuration?
 --

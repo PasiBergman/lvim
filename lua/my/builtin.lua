@@ -1,10 +1,10 @@
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = false
-lvim.builtin.nvimtree.side = "left"
+lvim.builtin.nvimtree.setup.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 1
-lvim.builtin.nvimtree.hide_dotfiles = 0
-lvim.builtin.nvimtree.auto_close = 1
+lvim.builtin.nvimtree.setup.hide_dotfiles = 0
+lvim.builtin.nvimtree.setup.auto_close = 1
 lvim.builtin.project.active = false
 
 -- Disable debugging - using Vimspector for now

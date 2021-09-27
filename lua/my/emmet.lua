@@ -33,7 +33,7 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 if not lspconfig.emmet_ls then
   configs.emmet_ls = {
     default_config = {
-      cmd = { DATA_PATH .. "/lspinstall/emmet/node_modules/.bin/emmet-ls", "--stdio" },
+      cmd = { vim.fn.stdpath "data" .. "/lspinstall/emmet/node_modules/.bin/emmet-ls", "--stdio" },
       filetypes = {
         "aspnetcorerazor",
         "css",

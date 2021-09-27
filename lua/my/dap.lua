@@ -20,8 +20,8 @@ M.config = function()
     return
   end
 
-  local engine_log = string.format("%s/netcoredbg.engine.log", CACHE_PATH)
-  local debug_log = string.format("%s/netcoredbg.log", CACHE_PATH)
+  local engine_log = string.format("%s/netcoredbg.engine.log", vim.fn.stdpath "cache")
+  local debug_log = string.format("%s/netcoredbg.log", vim.fn.stdpath "cache")
 
   dap.adapters.netcoredbg = {
     type = "executable",
