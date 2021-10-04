@@ -1,0 +1,66 @@
+{
+  "json": {
+    "schemas": [
+      {
+        "description": ".NET appsettings",
+        "fileMatch": [
+          "appsettings.json",
+          "appsettings.dev.json",
+          "appsettings.dev1.json",
+          "appsettings.development.json",
+          "appsettings.hyte.json",
+          "appsettings.staging.json",
+          "appsettings.production.json",
+          "appsettings.prod.json",
+          "appsettings.local.json"
+        ],
+        "url": "https://json.schemastore.org/appsettings.json"
+      },
+      {
+        "description": "Azure pipelines v1.174.2",
+        "fileMatch": ["azure-pipelines.yml"],
+        "url": "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/main/service-schema.json"
+      },
+      {
+        "description": "Bootstrap-loader config",
+        "fileMatch": [".bootstraprc"],
+        "url": "https://json.schemastore.org/bootstraprc.json"
+      },
+      {
+        "description": "Azure Functions function.json file",
+        "fileMatch": ["functions.json"],
+        "url": "https://json.schemastore.org/function.json"
+      },
+      {
+        "description": "OmniSharp formatting config",
+        "fileMatch": ["omnisharp.json"],
+        "url": "https://json.schemastore.org/omnisharp.json"
+      },
+      {
+        "description": "OpenAPI schema v3.1",
+        "fileMatch": ["openapi.json"],
+        "url": "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json"
+      },
+      {
+        "description": "Swagger 2.0 API schema",
+        "fileMatch": ["swagger.json", "swagger.yml"],
+        "url": "https://json.schemastore.org/swagger-2.0.json"
+      },
+      {
+        "description": "xUnit runner cofngiguration v2.3",
+        "fileMatch": ["xunit.json"],
+        "url": "https://json.schemastore.org/xunit.runner.schema.json"
+      },
+      {
+        "description": "Docker Compose configuration",
+        "fileMatch": ["compose.yml"],
+        "url": "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"
+      },
+      {
+        "description": "Markdownlint config file",
+        "fileMatch": ["markdownlint.yml"],
+        "url": "https://json.schemastore.org/markdownlint.json"
+      }
+    ]
+  }
+}

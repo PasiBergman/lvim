@@ -21,9 +21,6 @@ require "my.autocommands"
 -- LSP
 require "my.lsp"
 
--- Additional JSON schemas
-require("my.json-schemas").setup()
-
 -- Treesitter
 require "my.treesitter"
 

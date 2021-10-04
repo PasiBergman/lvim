@@ -72,9 +72,6 @@ lvim.builtin.telescope.defaults.mappings = mappings
 -- lualine
 -- require "my.lualine"
 
--- Disable Sumneko Lua Language Server's telemetry
-lvim.lang.lua.lsp.setup.settings.Lua["telemetry"] = { enable = false }
-
 --
 -- Tailwindcss
 lvim.lang.tailwindcss.active = false
