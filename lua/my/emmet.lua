@@ -33,14 +33,13 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 if not lspconfig.emmet_ls then
   configs.emmet_ls = {
     default_config = {
-      cmd = { vim.fn.stdpath "data" .. "/lspinstall/emmet/node_modules/.bin/emmet-ls", "--stdio" },
+      cmd = { vim.fn.stdpath "data" .. "/lsp_servers/emmet_ls/node_modules/.bin/emmet-ls", "--stdio" },
       filetypes = {
         "aspnetcorerazor",
         "css",
         "django-html",
         "gohtml",
         "html",
-        "javascriptreact",
         "less",
         "php",
         "postcss",
@@ -48,7 +47,6 @@ if not lspconfig.emmet_ls then
         "sass",
         "scss",
         "svelte",
-        "typescriptreact",
         "vue",
       },
       root_dir = function(_)
