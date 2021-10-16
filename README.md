@@ -1,4 +1,4 @@
-# LunarVim configuration
+# My LunarVim configuration
 
 - [Neovim](https://github.com/neovim/neovim) stable
 - [LunarVim](http://github.com/LunarVim/LunarVim) rolling
@@ -29,7 +29,7 @@ brew update
 brew install neovim fzy luarocks ripgrep shellcheck shmft fnm python@3.9
 brew install font-fira-code-nerd-font
 
-# Fast Node Manager. Replace
+# Fast Node Manager
 NODE_VERSION="14.18.1"
 fnm install $NODE_VERSION
 fnm default $NODE_VERSION
