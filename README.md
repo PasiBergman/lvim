@@ -3,7 +3,7 @@
 - [Neovim](https://github.com/neovim/neovim) stable
 - [LunarVim](http://github.com/LunarVim/LunarVim) rolling
 
-![LunarVim](assets/lvim-config-lunarvim.png =800x)
+![LunarVim](./assets/lvim-config-lunarvim.png)
 
 I mainly use:
 
@@ -77,6 +77,6 @@ I have disabled the automatic installation of language servers.
 
 ## Screenshots
 
-![TypeScript](assets/lvim-config-ts.png =800x)
-![Vue](assets/lvim-config-vue.png =800x)
-![C#](assets/lvim-config-cs.png =800x)
+![TypeScript](./assets/lvim-config-ts.png)
+![Vue](./assets/lvim-config-vue.png)
+![C#](./assets/lvim-config-cs.png)
