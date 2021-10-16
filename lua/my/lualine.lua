@@ -1,4 +1,4 @@
-local components = require "core.lualine.components"
+local components = require "lvim.core.lualine.components"
 
 -- Remove treesitter from the config
 lvim.builtin.lualine.sections.lualine_x = {
