@@ -1,5 +1,5 @@
-require "my.general"
 -- General lvim configuration
+require "my.general"
 
 -- Colors and colorscheme options
 require "my.colorschemes"

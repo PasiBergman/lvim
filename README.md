@@ -26,7 +26,7 @@ I mainly use:
 ```shell
 # Homebrew
 brew update
-brew install neovim fzy luarocks ripgrep shellcheck shmft fnm python@3.9
+brew install neovim fzy luarocks ripgrep shellcheck shfmt fnm python@3.9
 brew install font-fira-code-nerd-font
 
 # Fast Node Manager
