@@ -1,7 +1,7 @@
 --
 -- Collection of highlights changes
 --
--- LSP diagnostics virtual texts
+-- LSP diagnostics virtual texts and codelens
 vim.cmd [[highlight LspDiagnosticsUnderlineInformation gui=undercurl]]
 vim.cmd [[highlight LspDiagnosticsUnderlineHint gui=undercurl]]
 vim.cmd [[highlight LspDiagnosticsUnderlineWarning gui=undercurl]]
@@ -28,4 +28,5 @@ if lvim.colorscheme == "nordbuddy" then
   vim.cmd [[highlight BufferInactiveMod guifg=#88c0d0 guibg=#3b4252]]
   -- Completion menu selected item
   vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#88c0d0 guibg=#8091b2"]]
+  vim.cmd [[highlight LspCodeLens guifg=#654F61]]
 end
