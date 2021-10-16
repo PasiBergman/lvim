@@ -57,5 +57,7 @@ LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunar
 I have disabled the automatic installation of language servers.
 
 ```vim
-:LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls yamlls jsonls vimls
+:PackerSync
+:LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls yamlls
+:LspInstall jsonls vimls emmet_ls dockerls tailwindcss
 ```
