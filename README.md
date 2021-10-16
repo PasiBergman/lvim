@@ -1,23 +1,27 @@
 # LunarVim configuration
 
-## My usage
+- [Neovim](https://github.com/neovim/neovim) stable
+- [LunarVim](http://github.com/LunarVim/LunarVim) rolling
 
-I mostly code with
+I mainly use:
 
 - TypeScript & JavaScript
   - Node
   - Vue
   - React
 - C#
-  - .NET & ASP.NET Core
+  - .NET (Core)
+  - ASP.NET Core
 - Python 3
 - Lua
 - Swift
   - iOS/iPadOS/macOS
+- HTML & CSS
+- Markdown & JSON & Yaml
 
 ## Setup/Dependencies
 
-### macOS (homebrew)
+### macOS (Homebrew)
 
 ```shell
 # Homebrew
@@ -48,8 +52,15 @@ unzip stylua-${STYLUA_VERSION}-macos.zip
 rm stylua-${STYLUA_VERSION}-macos.zip
 chmod +x stylua
 
-# LunarVim
-LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+# LunarVim (rolling)
+LVBRANCH=rolling \
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+
+# My LunarVim configuration
+cd ~/.config
+mv lvim lvim-original
+git clone https://github.com/PasiBergman/lvim.git lvim-my
+ln -s lvim-my lvim
 ```
 
 ### LunarVim
@@ -58,6 +69,6 @@ I have disabled the automatic installation of language servers.
 
 ```vim
 :PackerSync
-:LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls yamlls
-:LspInstall jsonls vimls emmet_ls dockerls tailwindcss
+:LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls
+:LspInstall jsonls yamlls vimls emmet_ls dockerls tailwindcss
 ```
