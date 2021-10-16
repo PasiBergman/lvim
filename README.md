@@ -3,6 +3,8 @@
 - [Neovim](https://github.com/neovim/neovim) stable
 - [LunarVim](http://github.com/LunarVim/LunarVim) rolling
 
+![LunarVim](./assets/lvim-config-lunarvim.png =800x)
+
 I mainly use:
 
 - TypeScript & JavaScript
@@ -72,3 +74,9 @@ I have disabled the automatic installation of language servers.
 :LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls
 :LspInstall jsonls yamlls vimls emmet_ls dockerls tailwindcss
 ```
+
+## Screenshots
+
+![TypeScript](./assets/lvim-config-ts.png =800x)
+![Vue](./assets/lvim-config-vue.png =800x)
+![C#](./assets/lvim-config-cs.png =800x)
