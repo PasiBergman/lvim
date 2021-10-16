@@ -51,13 +51,14 @@ local linters_table = {
   {
     exe = "markdownlint",
     filetype = {
+      "markdown",
       "md",
     },
   },
   {
     exe = "flake8",
     filetype = {
-      "py",
+      "python",
     },
   },
 }
@@ -93,14 +94,14 @@ local formatters_table = {
     exe = "black",
     args = { "--fast" },
     filetypes = {
-      "py",
+      "python",
     },
   },
   {
     exe = "isort",
     args = { "--profile", "black" },
     filetypes = {
-      "py",
+      "python",
     },
   },
 }
