@@ -82,7 +82,7 @@ I have disabled the automatic installation of language servers.
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
 - Tmux
 
-Top status bar is from LunarVim but from Tmux.
+Top row in the screenshots is Tmux status bar, not LunarVim.
 
 ![TypeScript](./assets/lvim-config-ts.png)
 ![Vue](./assets/lvim-config-vue.png)
