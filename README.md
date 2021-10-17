@@ -86,6 +86,14 @@ I have disabled the automatic installation of language servers.
 
 Top row in the screenshots is Tmux status bar, not LunarVim.
 
+TypeSciript
+
 ![TypeScript](./assets/lvim-config-ts.png)
+
+Vue
+
 ![Vue](./assets/lvim-config-vue.png)
+
+C#
+
 ![C#](./assets/lvim-config-cs.png)
