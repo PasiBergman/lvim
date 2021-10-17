@@ -20,6 +20,8 @@ I mainly use:
   - iOS/iPadOS/macOS
 - HTML & CSS
 - Markdown & JSON & Yaml
+- Bash / Zsh / Posix
+- PowerShell
 
 ## Setup/Dependencies
 
@@ -72,7 +74,7 @@ I have disabled the automatic installation of language servers.
 ```vim
 :PackerSync
 :LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls
-:LspInstall jsonls yamlls vimls emmet_ls dockerls tailwindcss
+:LspInstall jsonls yamlls vimls emmet_ls dockerls tailwindcss bashls
 ```
 
 ## Screenshots
