@@ -1,9 +1,8 @@
 -- general
 lvim.format_on_save = true
 
--- lvim.colorscheme = "sonokai"
+-- lvim.colorscheme = "onedarker"
 lvim.colorscheme = "nordbuddy"
--- lvim.colorscheme = "spacegray"
 
 -- keymappings
 lvim.leader = "space"
