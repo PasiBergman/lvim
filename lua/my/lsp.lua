@@ -52,13 +52,18 @@ local linters_table = {
     exe = "markdownlint",
     filetype = {
       "markdown",
-      "md",
     },
   },
   {
     exe = "flake8",
     filetype = {
       "python",
+    },
+  },
+  {
+    exe = "write-good",
+    filetype = {
+      "markdown",
     },
   },
 }

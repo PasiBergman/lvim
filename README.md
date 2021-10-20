@@ -19,8 +19,8 @@ I mainly use:
 - Swift
   - iOS/iPadOS/macOS
 - HTML & CSS
-- Markdown & JSON & Yaml
-- Bash / Zsh / Posix
+- Markdown & JSON & YAML
+- Bash / Zsh / POSIX
 - PowerShell
 
 ## Setup/Dependencies
@@ -40,7 +40,7 @@ fnm default $NODE_VERSION
 fnm use $NODE_VERSION
 
 # NPM
-npm install -g eslint_d markdownlint-cli neovim prettier stylelint yarn
+npm install -g eslint_d markdownlint-cli neovim prettier stylelint yarn write-good
 
 # PIP
 pip3 install black isort flake8 pynvim
@@ -86,7 +86,7 @@ I have disabled the automatic installation of language servers.
 
 Top row in the screenshots is Tmux status bar, not LunarVim.
 
-TypeSciript
+TypeScript
 
 ![TypeScript](./assets/lvim-config-ts.png)
 
