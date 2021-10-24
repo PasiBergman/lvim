@@ -2,7 +2,6 @@
 -- Do not install langauge servers automatically
 --
 lvim.lsp.automatic_servers_installation = false
-vim.list_extend(lvim.lsp.override, { "volar" })
 
 -- Configure formatters and linters manually
 local linters = require "lvim.lsp.null-ls.linters"
