@@ -23,7 +23,7 @@ lvim.plugins = {
       require "my.highlights"
     end,
   },
-  -- { "shaunsingh/nord.nvim" },
+  { "shaunsingh/nord.nvim" },
   -- { "folke/tokyonight.nvim" },
   ---{ "rafamadriz/neon" },
   -- { 'projekt0n/github-nvim-theme' },

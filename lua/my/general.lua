@@ -2,7 +2,8 @@
 lvim.format_on_save = true
 
 -- lvim.colorscheme = "onedarker"
-lvim.colorscheme = "nordbuddy"
+-- lvim.colorscheme = "nordbuddy"
+lvim.colorscheme = "nord"
 
 -- keymappings
 lvim.leader = "space"
