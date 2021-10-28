@@ -8,13 +8,12 @@ vim.cmd [[highlight LspDiagnosticsUnderlineWarning gui=undercurl]]
 vim.cmd [[highlight LspDiagnosticsUnderlineError gui=undercurl]]
 --CodeLens
 vim.cmd [[highlight LspCodeLens guifg=#654F61]]
-
 --
 -- sonokai andromeda
 --
 if lvim.colorscheme == "sonokai" and vim.g.sonokai_style == "andromeda" then
   -- Completion menu selected item
-  vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#2b2d3a guibg=#9ed06c]]
+  vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=none guifg=#2b2d3a guibg=#9ed06c]]
   -- Bufferline
   vim.cmd [[highlight BufferVisibleMod guifg=#d8dee9 guibg=#4c566a]]
   vim.cmd [[highlight BufferCurrentMod guifg=#d8dee9 guibg=#2e3440 gui=bold]]
@@ -25,7 +24,7 @@ end
 --
 if lvim.colorscheme == "nordbuddy" or lvim.colorscheme == "nord" then
   -- Completion menu selected item
-  vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#88c0d0 guibg=#8091b2]]
+  vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=none guifg=#eeffff guibg=#5D81AC]]
 
   if lvim.colorscheme == "nord" then
     return
