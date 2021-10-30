@@ -1,4 +1,11 @@
 lvim.plugins = {
+  { "shaunsingh/nord.nvim" },
+  {
+    "sainnhe/sonokai",
+    config = function()
+      require "my.highlights"
+    end,
+  },
   {
     "maaslalani/nordbuddy",
     config = function()
@@ -18,13 +25,25 @@ lvim.plugins = {
     end,
   },
   {
-    "sainnhe/sonokai",
+    "rmehri01/onenord.nvim",
     config = function()
-      require "my.highlights"
+      require("onenord").setup {
+        borders = true, -- Split window borders
+        italics = {
+          comments = true, -- Italic comments
+          strings = false, -- Italic strings
+          keywords = false, -- Italic keywords
+          functions = false, -- Italic functions
+          variables = false, -- Italic variables
+        },
+        disable = {
+          background = false, -- Disable setting the background color
+          cursorline = false, -- Disable the cursorline
+          eob_lines = true, -- Hide the end-of-buffer lines
+        },
+      }
     end,
   },
-  { "shaunsingh/nord.nvim" },
-  { "rmehri01/onenord.nvim" },
   -- { "folke/tokyonight.nvim" },
   ---{ "rafamadriz/neon" },
   -- { 'projekt0n/github-nvim-theme' },
