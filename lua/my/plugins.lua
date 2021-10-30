@@ -24,6 +24,7 @@ lvim.plugins = {
     end,
   },
   { "shaunsingh/nord.nvim" },
+  { "rmehri01/onenord.nvim" },
   -- { "folke/tokyonight.nvim" },
   ---{ "rafamadriz/neon" },
   -- { 'projekt0n/github-nvim-theme' },

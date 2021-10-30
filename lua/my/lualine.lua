@@ -1,4 +1,5 @@
 local components = require "lvim.core.lualine.components"
+lvim.builtin.lualine.options.theme = lvim.colorscheme
 
 -- Remove treesitter from the config
 lvim.builtin.lualine.sections.lualine_x = {
