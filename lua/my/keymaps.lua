@@ -67,11 +67,25 @@ lvim.builtin.which_key.mappings["S"] = {
   l = { "<cmd>lua require('my.keymaps').list_sessions()<cr>", "List" },
 }
 
--- Which-key: +Terimnal
+-- Which-key: +Terminal
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Terminal",
   b = { "<cmd>split term://zsh<cr>", "Terminal to below" },
   r = { "<cmd>vsplit term://zsh<cr>", "Terminal to right" },
+}
+
+lvim.builtin.which_key.mappings["H"] = { "<cmd>noh<cr>", "No highlight" }
+
+-- Which-key: +Harpoon
+lvim.builtin.which_key.mappings["h"] = {
+  name = "+Harpoon",
+  h = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to file 1" },
+  j = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to file 2" },
+  k = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to file 3" },
+  l = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to file 4" },
+  a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
+  t = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
+  u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
 }
 
 -- Which-key: LSP symbols

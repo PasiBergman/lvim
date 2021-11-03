@@ -171,6 +171,19 @@ lvim.plugins = {
       vim.g.vimspector_enable_mappings = "VISUAL_STUDIO"
     end,
   },
+  {
+    "ThePrimeagen/harpoon",
+    config = function()
+      require("harpoon").setup {
+        global_settings = {
+          save_on_toggle = true,
+          save_on_change = true,
+          enter_on_sendcmd = false,
+        },
+      }
+    end,
+    requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
+  },
   --[[
   {
     "nvim-telescope/telescope-dap.nvim",

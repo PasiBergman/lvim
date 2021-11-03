@@ -1,3 +1,4 @@
+local clr = lvim.colorscheme
 --
 -- Collection of highlights changes
 --
@@ -11,7 +12,7 @@ vim.cmd [[highlight LspCodeLens guifg=#654F61]]
 --
 -- sonokai andromeda
 --
-if lvim.colorscheme == "sonokai" and vim.g.sonokai_style == "andromeda" then
+if clr == "sonokai" and vim.g.sonokai_style == "andromeda" then
   -- Completion menu selected item
   vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=none guifg=#2b2d3a guibg=#9ed06c]]
   -- Bufferline
@@ -20,13 +21,13 @@ if lvim.colorscheme == "sonokai" and vim.g.sonokai_style == "andromeda" then
   vim.cmd [[highlight BufferInactiveMod guifg=#d8dee9 guibg=#3b4252]]
 end
 --
--- nordbuddy
+-- *nord*
 --
-if lvim.colorscheme == "nordbuddy" or lvim.colorscheme == "nord" then
+if string.find(clr, "nord") ~= nil then
   -- Completion menu selected item
   vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=none guifg=#eeffff guibg=#5D81AC]]
 
-  if lvim.colorscheme == "nord" then
+  if clr ~= "nordbuddy" then
     return
   end
 
