@@ -11,9 +11,20 @@ lvim.builtin.project.active = true
 lvim.builtin.dap.active = false
 
 -- Dashboard
-lvim.builtin.dashboard.custom_section.b = {
+local ds = lvim.builtin.dashboard.custom_section
+local project_desc = ds.c.description
+local project_cmd = ds.c.command
+ds.b = {
+  description = ds.d.description,
+  command = ds.d.command,
+}
+ds.c = {
   description = { "  Git files          " },
   command = "Telescope git_files",
+}
+ds.d = {
+  description = project_desc,
+  command = project_cmd,
 }
 
 -- if you don't want all the parsers change this to a table of the ones you want

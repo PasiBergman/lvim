@@ -1,5 +1,9 @@
 -- Yank to line end
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
+-- Character delete uses specific register
+vim.api.nvim_set_keymap("n", "x", '"xx', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "dd", '"ddd', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "D", '"dD', { noremap = true, silent = true })
 -- Keep centered
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true, silent = true })
