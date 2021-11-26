@@ -1,26 +1,12 @@
 lvim.plugins = {
+  --[[
   { "shaunsingh/nord.nvim" },
+  { "folke/tokyonight.nvim" },
+  { "rafamadriz/neon" },
+  { 'projekt0n/github-nvim-theme' },
   {
     "sainnhe/sonokai",
     config = function()
-      require "my.highlights"
-    end,
-  },
-  {
-    "maaslalani/nordbuddy",
-    config = function()
-      require("nordbuddy").colorscheme {
-        -- Underline style used for spelling
-        -- Options: 'none', 'underline', 'undercurl'
-        underline_option = "undercurl",
-        -- Italics for certain keywords such as constructors, functions,
-        -- labels and namespaces
-        italic = false,
-        -- Italic styled comments
-        italic_comments = false,
-        -- Minimal mode: different choice of colors for Tabs and StatusLine
-        minimal_mode = false,
-      }
       require "my.highlights"
     end,
   },
@@ -44,11 +30,28 @@ lvim.plugins = {
       }
     end,
   },
-  -- { "folke/tokyonight.nvim" },
-  ---{ "rafamadriz/neon" },
-  -- { 'projekt0n/github-nvim-theme' },
+  --]]
   {
-    "rizzatti/dash.vim",
+    "maaslalani/nordbuddy",
+    config = function()
+      require("nordbuddy").colorscheme {
+        -- Underline style used for spelling
+        -- Options: 'none', 'underline', 'undercurl'
+        underline_option = "undercurl",
+        -- Italics for certain keywords such as constructors, functions,
+        -- labels and namespaces
+        italic = false,
+        -- Italic styled comments
+        italic_comments = false,
+        -- Minimal mode: different choice of colors for Tabs and StatusLine
+        minimal_mode = false,
+      }
+      require "my.highlights"
+    end,
+  },
+  {
+    "mrjones2014/dash.nvim",
+    run = "make install",
     event = "BufWinEnter",
   },
   {

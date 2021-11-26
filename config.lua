@@ -33,6 +33,9 @@ require "my.emmet"
 -- Commands etc
 require "my.commands"
 
+-- Telescope
+require "my.telescope"
+
 -- Debug (DAP)
 if lvim.builtin.dap.active then
   require("my.dap").config()
