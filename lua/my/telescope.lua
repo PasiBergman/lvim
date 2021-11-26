@@ -2,6 +2,7 @@
 
 -- Requires git-delta, e.g. on macOS
 -- brew install git-delta
+local Log = require "lvim.core.log"
 
 local previewers = require "telescope.previewers"
 local builtin = require "telescope.builtin"
@@ -33,9 +34,9 @@ if status_ok then
     dash_app = vim.fn.glob "/Applications/Setapp/Dash.app"
   end
   if dash_app == "" then
+    Log:warn "Dash.nvim plugin installed but Dash.app was not found. Check configuration."
     return
   end
-  print("Dash app:" .. dash_app)
   lvim.builtin.telescope.extensions["dash"] = {
     dash_app_path = dash_app,
     -- search engine to fall back to when Dash has no results, must be one of: 'ddg', 'duckduckgo', 'startpage', 'google'
