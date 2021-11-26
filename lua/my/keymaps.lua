@@ -17,8 +17,8 @@ vim.api.nvim_set_keymap("n", "?", "?<C-g>u", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "J", "'>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("v", "K", "'<-2<CR>gv=gv", { noremap = true, silent = true })
 -- Paste last yanked (not deleted) register
-vim.api.nvim_set_keymap("n", ",p", '"0p', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", ",P", '"0P', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", ",p", '"0p', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", ",P", '"0P', { noremap = true, silent = true })
 
 -- See lua/my/commands.lua
 -- vim.api.nvim_set_keymap("n", "<F5>", ":ExecSh<cr>", { noremap = true, silent = true })
@@ -47,6 +47,12 @@ lvim.builtin.which_key.mappings["q"] = {
 -- Which-key: +Search
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope grep_string<cr>", "Grep cursor word" }
 lvim.builtin.which_key.mappings["sG"] = { "<cmd>Telescope git_files<cr>", "Git files" }
+-- Which-key: +Search Dash (if plugin is installed)
+local status_ok, _ = pcall(require, "dash")
+if status_ok then
+  lvim.builtin.which_key.mappings["sd"] = { "<cmd>Dash<cr>", "Dash search" }
+  lvim.builtin.which_key.mappings["sw"] = { "<cmd>DashWord<cr>", "Dash word" }
+end
 
 -- Which-key: +Git
 lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua required('gitlinker').get_buf_range_url('n')<cr>", "Gitlinker" }
