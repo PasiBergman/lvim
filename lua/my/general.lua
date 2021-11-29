@@ -2,7 +2,7 @@
 lvim.format_on_save = true
 
 -- lvim.colorscheme = "onedarker"
-lvim.colorscheme = "nordbuddy"
+lvim.colorscheme = "nordic"
 -- lvim.colorscheme = "nord"
 -- lvim.colorscheme = "onenord"
 

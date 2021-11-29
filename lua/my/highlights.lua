@@ -27,7 +27,7 @@ if string.find(clr, "nord") ~= nil then
   -- Completion menu selected item
   vim.cmd [[highlight PmenuSel ctermfg=242 ctermbg=0 gui=none guifg=#eeffff guibg=#5D81AC]]
 
-  if clr ~= "nordbuddy" then
+  if clr ~= "nordic" then
     return
   end
 

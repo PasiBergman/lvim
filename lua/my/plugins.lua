@@ -32,9 +32,9 @@ lvim.plugins = {
   },
   --]]
   {
-    "maaslalani/nordbuddy",
+    "andersevenrud/nordic.nvim",
     config = function()
-      require("nordbuddy").colorscheme {
+      require("nordic").colorscheme {
         -- Underline style used for spelling
         -- Options: 'none', 'underline', 'undercurl'
         underline_option = "undercurl",
@@ -42,7 +42,7 @@ lvim.plugins = {
         -- labels and namespaces
         italic = false,
         -- Italic styled comments
-        italic_comments = false,
+        italic_comments = true,
         -- Minimal mode: different choice of colors for Tabs and StatusLine
         minimal_mode = false,
       }

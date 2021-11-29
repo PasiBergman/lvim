@@ -80,7 +80,7 @@ I have disabled the automatic installation of language servers.
 ## Screenshots
 
 - [Kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator.
-- [Nordbuddy theme](https://github.com/maaslalani/nordbuddy)
+- [Nordic theme](https://github.com/andersevenrud/nordic.nvim)
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
 - Tmux
 
