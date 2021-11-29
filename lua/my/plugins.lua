@@ -50,11 +50,6 @@ lvim.plugins = {
     end,
   },
   {
-    "mrjones2014/dash.nvim",
-    run = "make install",
-    event = "BufWinEnter",
-  },
-  {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
