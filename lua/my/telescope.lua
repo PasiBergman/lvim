@@ -8,21 +8,6 @@ local previewers = require "telescope.previewers"
 local builtin = require "telescope.builtin"
 -- local conf = require('telescope.config')
 
-lvim.builtin.telescope.vimgrep_arguments = {
-  "rg",
-  "--color=never",
-  "--no-heading",
-  "--with-filename",
-  "--line-number",
-  "--column",
-  "--smart-case",
-  "--hidden",
-  "-g",
-  "!.git/",
-  "!bin/",
-  "!obj/",
-}
-
 --
 --  If Dash.nvim plugin is installed and Dash.app is found
 -- configure Dash as a Telescope extension

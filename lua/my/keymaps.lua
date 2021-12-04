@@ -89,11 +89,11 @@ lvim.builtin.which_key.mappings["H"] = { "<cmd>noh<cr>", "No highlight" }
 -- Which-key: +Harpoon
 lvim.builtin.which_key.mappings["h"] = {
   name = "+Harpoon",
-  h = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to file 1" },
-  j = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to file 2" },
-  k = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to file 3" },
-  l = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to file 4" },
-  a = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
+  a = { "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", "Navigate to file 1" },
+  s = { "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", "Navigate to file 2" },
+  d = { "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", "Navigate to file 3" },
+  f = { "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", "Navigate to file 4" },
+  h = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add file" },
   t = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
   u = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Toggle UI" },
 }
@@ -107,61 +107,5 @@ lvim.builtin.which_key.mappings["z"] = { "<cmd>ZenMode<cr>", "Zen Mode" }
 -- Which-key: Kitty config
 lvim.builtin.which_key.mappings["K"] = { "<cmd>edit ~/.config/kitty/kitty.conf<cr>", "Kitty conf" }
 
--- overwrite the key-mappings provided by LunarVim for any mode, or leave it empty to keep them
--- lvim.builtin.which_key.mappings[]
---   Page down/up
---   {'[d', '<PageUp>'},
---   {']d', '<PageDown>'},
---
---   Navigate buffers
---   {'<Tab>', ':bnext<CR>'},
---   {'<S-Tab>', ':bprevious<CR>'},
--- }
--- if you just want to augment the existing ones then use the utility function
--- require("utils").add_keymap_insert_mode({ silent = true }, {
--- { "<C-s>", ":w<cr>" },
--- { "<C-c>", "<ESC>" },
--- })
-
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- lvim.autocommands.custom_groups = {
---   { "BufWinEnter", "*.cs", "setlocal ts=4 sw=4" },
--- }
-
---[[
-M = {}
-
-M.save_session = function()
-  local name = vim.fn.input "Save session: "
-  if name ~= "" then
-    local command = "mksession! ~/.cache/nvim/sessions/" .. name
-    vim.cmd(command)
-    vim.cmd('echo "Session ' .. name .. ' saved."')
-  end
-end
-
-M.open_session = function()
-  local name = vim.fn.input "Open session: "
-  if name ~= "" then
-    local command = "source ~/.cache/nvim/sessions/" .. name
-    vim.cmd(command)
-    vim.cmd('echo "Session ' .. name .. ' sourced."')
-  end
-end
-
-M.remove_session = function()
-  local name = vim.fn.input "Delete session: "
-  if name ~= "" then
-    local command = "!rm ~/.cache/nvim/sessions/" .. name
-    vim.cmd(command)
-    vim.cmd('echo "Session ' .. name .. ' removed."')
-  end
-end
-
-M.list_sessions = function()
-  local command = "!ls ~/.cache/nvim/sessions/ | xargs"
-  vim.cmd(command)
-end
-
-return M
---]]
+-- Remove LunarVim keymaps
+lvim.keys.visual_mode = {}

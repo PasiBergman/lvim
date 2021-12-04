@@ -3,7 +3,6 @@ require "my.general"
 
 -- Colors and colorscheme options
 require "my.colorschemes"
-require "my.colors"
 require "my.lualine"
 
 -- Builtin configuration
