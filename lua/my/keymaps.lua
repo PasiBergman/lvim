@@ -1,5 +1,5 @@
--- Yank to line end
-vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
+-- Yank to line end - obsolete on Neovim 0.6+
+-- vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
 -- Character delete uses specific register
 vim.api.nvim_set_keymap("n", "x", '"xx', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "dd", '"ddd', { noremap = true, silent = true })
