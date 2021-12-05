@@ -1,10 +1,10 @@
 local M = {}
 -- Configure DAP
+local Log = require "lvim.core.log"
 
 M.config = function()
   local status_ok, dap = pcall(require, "dap")
   if not status_ok then
-    local Log = require "core.log"
     Log:get_default().error "Failed to load Debug Adapter Protocol (dap) plugin"
     return
   end
@@ -15,7 +15,6 @@ M.config = function()
   local netcoredbg = vim.fn.expand "$HOME/.local/share/nvim/dapinstall/dnetcs_dbg/netcoredbg/netcoredbg"
 
   if vim.fn.executable(netcoredbg) ~= 1 then
-    local Log = require "core.log"
     Log:get_default().error(".NET debug adapter not executable: " .. netcoredbg)
     return
   end
