@@ -79,10 +79,3 @@ local mappings = {
   },
 }
 lvim.builtin.telescope.defaults.mappings = mappings
-
--- lualine
--- require "my.lualine"
-
---
--- Tailwindcss
-lvim.lang.tailwindcss.active = false

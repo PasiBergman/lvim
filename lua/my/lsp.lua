@@ -11,7 +11,9 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 --
 local utils = require "my.utils"
 local project_has_prettier_config = function()
-  return (vim.fn.glob ".prettierrc*" ~= "" or utils.is_in_package_json "prettier")
+  local hasprettier = (vim.fn.glob ".prettierrc*" ~= "" or utils.is_in_package_json "prettier")
+  -- print("Project does has prettier configured? " .. tostring(hasprettier))
+  return hasprettier
 end
 
 local linters_table = {
