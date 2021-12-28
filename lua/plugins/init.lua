@@ -61,18 +61,18 @@ lvim.plugins = {
   --
   {
     "phaazon/hop.nvim",
-    event = "BufRead",
     config = function()
       require("plugins.hop").config()
     end,
+    event = "BufRead",
   },
   {
     "ThePrimeagen/harpoon",
     config = function()
       require("plugins.harpoon").config()
     end,
-    requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
     event = "BufWinEnter",
+    requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
   },
   --
   -- Productivity
@@ -99,7 +99,6 @@ lvim.plugins = {
   },
   {
     "nvim-telescope/telescope-dap.nvim",
-    after = "telescope.nvim",
     config = function()
       if not lvim.builtin.dap.active then
         return
@@ -107,10 +106,18 @@ lvim.plugins = {
       require("telescope").load_extension "dap"
     end,
     event = "BufWinEnter",
+    after = "telescope.nvim",
   },
   --
   -- Themes
   --
+  {
+    "andersevenrud/nordic.nvim",
+    config = function()
+      require("themes.nordic").config()
+    end,
+  },
+  --[[
   {
     "shaunsingh/nord.nvim",
     config = function()
@@ -141,12 +148,7 @@ lvim.plugins = {
       require("themes.onenord").config()
     end,
   },
-  {
-    "andersevenrud/nordic.nvim",
-    config = function()
-      require("themes.nordic").config()
-    end,
-  },
+  --]]
   --
   -- Treesitter
   --
