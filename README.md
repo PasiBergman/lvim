@@ -1,7 +1,10 @@
 # My LunarVim configuration
 
-- [Neovim](https://github.com/neovim/neovim) stable
-- [LunarVim](http://github.com/LunarVim/LunarVim) rolling
+## WARNING 12/2021
+
+Branch `restructure` contains upcoming (~Jan 1st 2022) merge to `main`.
+
+## Usage
 
 ![LunarVim](./assets/lvim-config-lunarvim.png)
 
@@ -25,7 +28,14 @@ I mainly use:
 
 ## Setup/Dependencies
 
-### macOS (Homebrew)
+### Setup
+
+Install Neovim and LunarVim
+
+- [Neovim v0.6+](https://github.com/neovim/neovim)
+- [LunarVim rolling](http://github.com/LunarVim/LunarVim)
+
+### Dependencies (macOS)
 
 ```shell
 # Homebrew
