@@ -55,7 +55,22 @@ if status_ok then
 end
 
 -- Which-key: +Git
-lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua required('gitlinker').get_buf_range_url('n')<cr>", "Gitlinker" }
+lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua require('gitlinker').get_buf_range_url('n')<cr>", "Gitlinker" }
+-- Delta previewer custom Telescope functions
+if vim.fn.executable "delta" == 1 then
+  lvim.builtin.which_key.mappings["gS"] = {
+    "<cmd>lua require('plugins.telescope').delta_git_status()<cr>",
+    "Git status",
+  }
+  lvim.builtin.which_key.mappings["gL"] = {
+    "<cmd>lua require('plugins.telescope').delta_git_commits()<cr>",
+    "Git commits",
+  }
+  lvim.builtin.which_key.mappings["gM"] = {
+    "<cmd>lua require('plugins.telescope').delta_git_bcommits()<cr>",
+    "Git bcommits",
+  }
+end
 
 -- Which-key: +Diagnostics
 lvim.builtin.which_key.mappings["d"] = {
@@ -71,10 +86,10 @@ lvim.builtin.which_key.mappings["d"] = {
 -- Which-key: +Sessions
 lvim.builtin.which_key.mappings["S"] = {
   name = "+Sessions",
-  s = { "<cmd>lua require('my.keymaps').save_session()<cr>", "Save" },
-  o = { "<cmd>lua require('my.keymaps').open_session()<cr>", "Open" },
-  r = { "<cmd>lua require('my.keymaps').remove_session()<cr>", "Remove" },
-  l = { "<cmd>lua require('my.keymaps').list_sessions()<cr>", "List" },
+  s = { "<cmd>lua require('keymaps').save_session()<cr>", "Save" },
+  o = { "<cmd>lua require('keymaps').open_session()<cr>", "Open" },
+  r = { "<cmd>lua require('keymaps').remove_session()<cr>", "Remove" },
+  l = { "<cmd>lua require('keymaps').list_sessions()<cr>", "List" },
 }
 
 -- Which-key: +Terminal

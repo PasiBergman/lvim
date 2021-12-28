@@ -7,7 +7,7 @@ if not status_ok then
   return
 end
 
-local utils = require "my.utils"
+local utils = require "utils"
 dap.configurations.cs = {
   {
     type = "netcoredbg",

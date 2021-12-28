@@ -1,3 +1,7 @@
+-- Emmet LS
+require "lsp.emmet"
+-- Tailwindcss
+require "lsp.tailwindcss"
 --
 -- Do not install langauge servers automatically
 --
@@ -9,7 +13,7 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 --
 -- Does the current working directory (project) have a Prettier configuration?
 --
-local utils = require "my.utils"
+local utils = require "utils"
 local project_has_prettier_config = function()
   local hasprettier = (vim.fn.glob ".prettierrc*" ~= "" or utils.is_in_package_json "prettier")
   -- print("Project does has prettier configured? " .. tostring(hasprettier))
