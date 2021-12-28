@@ -10,7 +10,7 @@
 --
 -- ============================================================================
 --
-local utils = require "my.utils"
+local utils = require "utils"
 -- Skip configuring emmet language server client if project
 -- does not look like a web project
 if not utils.is_web_project() then

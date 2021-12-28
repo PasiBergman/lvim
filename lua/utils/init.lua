@@ -37,7 +37,7 @@ utils.decode_json_file = function(filename)
 end
 
 utils.get_debug_program = function()
-  local dap_config = require("my.utils").decode_json_file(vim.fn.getcwd() .. "/.dap.json")
+  local dap_config = require("utils").decode_json_file(vim.fn.getcwd() .. "/.dap.json")
   if dap_config ~= nil then
     local program = dap_config["program"]
     if program ~= nil then
@@ -45,7 +45,7 @@ utils.get_debug_program = function()
     end
   end
 
-  local vimspector_config = require("my.utils").decode_json_file(vim.fn.getcwd() .. "/.vimspector.json")
+  local vimspector_config = require("utils").decode_json_file(vim.fn.getcwd() .. "/.vimspector.json")
   if vimspector_config ~= nil then
     local config = vimspector_config["configurations"]
     if config ~= nil then

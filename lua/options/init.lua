@@ -1,52 +1,34 @@
+-- Format buffer when buffer/file is saved
+lvim.format_on_save = true
+
+-- Theme/Colorscheme
+lvim.colorscheme = "nordic"
+
+-- Leader key
+lvim.leader = "space"
+
+-- Keymap timeout
+vim.go.timeoutlen = 500
+
+-- Relative row numbers
+vim.go.relativenumber = true
+
+-- Debug LunarVim
+lvim.debug = false
+
+-- kitty
+-- https://sw.kovidgoyal.net/kitty/faq/#some-special-symbols-are-rendered-small-truncated-in-kitty
+vim.cmd [[let &t_ut='']]
+
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
+lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = false
-lvim.builtin.nvimtree.setup.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 1
-lvim.builtin.nvimtree.setup.hide_dotfiles = 0
-lvim.builtin.nvimtree.setup.auto_close = 1
-lvim.builtin.project.active = true
-
+-- Disable floating terminal - using tmux instead
+lvim.builtin.terminal.active = false
 -- Disable debugging - using Vimspector for now
 lvim.builtin.dap.active = false
 
--- Dashboard
-local ds = lvim.builtin.dashboard.custom_section
-local project_desc = ds.c.description
-local project_cmd = ds.c.command
-ds.b = {
-  description = ds.d.description,
-  command = ds.d.command,
-}
-ds.c = {
-  description = { "  Git files          " },
-  command = "Telescope git_files",
-}
-ds.d = {
-  description = project_desc,
-  command = project_cmd,
-}
-
--- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.ignore_install = {
-  "haskell",
-  "julia",
-  "ledger",
-  "ocaml",
-  "ocaml_interface",
-  "rst",
-  "scala",
-  "sparql",
-  "supercollider",
-  "swift",
-  "teal",
-  "toml",
-  "turtle",
-  "verilog",
-  "zig",
-}
-lvim.builtin.treesitter.highlight.enabled = true
 lvim.builtin.telescope.extensions = {
   fzy_native = {
     override_generic_sorter = false,

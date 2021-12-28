@@ -1,14 +1,18 @@
-local M = {}
 -- Configure DAP
 local Log = require "lvim.core.log"
 
-M.config = function()
+local DAP = {}
+
+DAP.config = function()
+  if not lvim.builtin.dap.active then
+    return
+  end
+
   local status_ok, dap = pcall(require, "dap")
   if not status_ok then
     Log:get_default().error "Failed to load Debug Adapter Protocol (dap) plugin"
     return
   end
-
   --
   -- .NET core (netcoredbg)
   --
@@ -33,4 +37,4 @@ M.config = function()
   }
 end
 
-return M
+return DAP
