@@ -39,11 +39,17 @@ For tmux config details see my [dotfiles](https://github.com/PasiBergman/dotfile
 
 ### Installation (macOS)
 
+Installation on macOS v11+ using [Homebrew](https://brew.sh).
+
+Note! You might have some of the applications and/or other dependencies already installed.
+
 ```shell
 # Update Homebrew
+# ---------------
 brew update
 
 # Install neovim, fnm and Python 3
+# --------------------------------
 brew install neovim fnm python
 
 # Install some other dependencies
@@ -54,7 +60,8 @@ brew install font-fira-code-nerd-font
 
 # Manually configure terminal emulator to use the installed nerd font
 
-# Fast Node Manager - install Node & NPM
+# Fast Node Manager & Node & NPM
+# --------------------------------------
 # Change the current NodeJS LTS version below
 NODE_VERSION="16.13.1"
 fnm install $NODE_VERSION
@@ -62,18 +69,26 @@ fnm default $NODE_VERSION
 fnm use $NODE_VERSION
 
 # NPM
+# ---
 # Neovim dependencies
 npm install -g neovim tree-sitter-cli yarn
 # Linters, formatters etc.
 npm install -g eslint_d markdownlint-cli prettier stylelint write-good
 
 # PIP
-pip3 install black isort flake8 pynvim
+# ---
+# Neovim dependency
+pip3 install pynvim
 
-# LuaRocks
+# Pyhton linters/formatters
+pip3 install black isort flake8
+
+# Lua linter
+# ----------
 luarocks luacheck
 
-# StyLua
+# Lua formatter
+# -------------
 STYLUA_VERSION="0.11.0"
 cd ~/.local/bin
 wget https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-${STYLUA_VERSION}-macos.zip
@@ -82,10 +97,12 @@ rm stylua-${STYLUA_VERSION}-macos.zip
 chmod +x stylua
 
 # LunarVim (rolling)
+# ------------------
 LVBRANCH=rolling \
   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 
-# This LunarVim configuration
+# My LunarVim configuration
+# -------------------------
 cd ~/.config
 mv lvim lvim-original
 git clone https://github.com/PasiBergman/lvim.git lvim-my
