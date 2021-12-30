@@ -26,31 +26,46 @@ I mainly use:
 - Bash / Zsh / POSIX
 - PowerShell
 
+I use [tmux](https://en.wikipedia.org/wiki/Tmux) with LunarVim. I switch from one
+project to another using **tmux sessions**. I have removed the projects option
+from LunarVim dashboard, because I don't need it.
+
+For tmux config details see my [dotfiles](https://github.com/PasiBergman/dotfiles).
+
 ## Setup/Dependencies
 
-### Setup
-
-Install Neovim and LunarVim
-
 - [Neovim v0.6+](https://github.com/neovim/neovim)
-- [LunarVim rolling](http://github.com/LunarVim/LunarVim)
+- [LunarVim rolling](https://github.com/LunarVim/LunarVim)
 
-### Dependencies (macOS)
+### Installation (macOS)
 
 ```shell
-# Homebrew
+# Update Homebrew
 brew update
-brew install neovim fzy luarocks ripgrep shellcheck shfmt fnm python@3.9
+
+# Install neovim, fnm and Python 3
+brew install neovim fnm python
+
+# Install some other dependencies
+brew install fzy luarocks ripgrep shellcheck shfmt
+
+# FiraCode Nerd Font
 brew install font-fira-code-nerd-font
 
-# Fast Node Manager
-NODE_VERSION="14.18.1"
+# Manually configure terminal emulator to use the installed nerd font
+
+# Fast Node Manager - install Node & NPM
+# Change the current NodeJS LTS version below
+NODE_VERSION="16.13.1"
 fnm install $NODE_VERSION
 fnm default $NODE_VERSION
 fnm use $NODE_VERSION
 
 # NPM
-npm install -g eslint_d markdownlint-cli neovim prettier stylelint yarn write-good
+# Neovim dependencies
+npm install -g neovim tree-sitter-cli yarn
+# Linters, formatters etc.
+npm install -g eslint_d markdownlint-cli prettier stylelint write-good
 
 # PIP
 pip3 install black isort flake8 pynvim
@@ -70,16 +85,17 @@ chmod +x stylua
 LVBRANCH=rolling \
   bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
 
-# My LunarVim configuration
+# This LunarVim configuration
 cd ~/.config
 mv lvim lvim-original
 git clone https://github.com/PasiBergman/lvim.git lvim-my
 ln -s lvim-my lvim
 ```
 
-### LunarVim
+### LunarVim configuration
 
 I have disabled the automatic installation of language servers.
+Start `lvim` and issue the following commands:
 
 ```vim
 :PackerSync
@@ -92,9 +108,9 @@ I have disabled the automatic installation of language servers.
 - [Kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator.
 - [Nordic theme](https://github.com/andersevenrud/nordic.nvim)
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
-- Tmux
+- [tmux](https://en.wikipedia.org/wiki/Tmux)
 
-Top row in the screenshots is Tmux status bar, not LunarVim.
+Top row in the screenshots is tmux status bar, not LunarVim.
 
 TypeScript
 
