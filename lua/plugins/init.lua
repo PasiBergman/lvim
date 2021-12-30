@@ -12,6 +12,8 @@ require("plugins.nvim-tree").config()
 require("plugins.dap").config()
 -- Treesitter
 require("plugins.treesitter").config()
+-- Barbar
+require("plugins.barbar").config()
 --
 -- ==================
 -- Additional plugins
