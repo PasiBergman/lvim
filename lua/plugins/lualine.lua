@@ -7,7 +7,9 @@ Lualine.config = function()
 
   local components = require "lvim.core.lualine.components"
 
-  lvim.builtin.lualine.options.theme = lvim.colorscheme
+  -- Nord is supported by lualine.nvim
+  -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
+  lvim.builtin.lualine.options.theme = "nord"
 
   -- Remove treesitter from the config
   lvim.builtin.lualine.sections.lualine_x = {
