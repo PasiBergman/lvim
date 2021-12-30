@@ -10,8 +10,8 @@ Dashboard.config = function()
 
   -- Dashboard
   local ds = lvim.builtin.dashboard.custom_section
-  local project_desc = ds.c.description
-  local project_cmd = ds.c.command
+  -- local project_desc = ds.c.description
+  -- local project_cmd = ds.c.command
   ds.b = {
     description = ds.d.description,
     command = ds.d.command,
@@ -20,10 +20,7 @@ Dashboard.config = function()
     description = { "  Git files          " },
     command = "Telescope git_files",
   }
-  ds.d = {
-    description = project_desc,
-    command = project_cmd,
-  }
+  ds.d = nnil
 end
 
 return Dashboard
