@@ -32,13 +32,14 @@ Nordic.config = function()
     custom_colors = function(c, s, cs)
       return {
         -- Single highlight group (name, foreground, background, style)
-        { "PmenuSel", "#2b2d3a", "#9ed06c", s.bold },
+        { "DummyHighlightName1", c.green, "#475063", s.undercurl },
         {
           { "DummyHighlightName2", "DummyHighlightName3" },
           c.red,
           c.white,
           s.bold,
         },
+
         -- Or a function that can return any of these combinations
         function(--[[c, s, cs]])
           return {
