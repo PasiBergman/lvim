@@ -1,5 +1,8 @@
 # My LunarVim configuration
 
+LunarVim? [LunarVim](https://www.lunarvim.org) is an opinionated, extensible,
+and fast IDE layer for Neovim.
+
 ## Usage
 
 ![LunarVim](./assets/lvim-config-lunarvim.png)
