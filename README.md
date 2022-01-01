@@ -1,9 +1,5 @@
 # My LunarVim configuration
 
-## WARNING 12/2021
-
-Branch `restructure` contains upcoming (~Jan 1st 2022) merge to `main`.
-
 ## Usage
 
 ![LunarVim](./assets/lvim-config-lunarvim.png)
