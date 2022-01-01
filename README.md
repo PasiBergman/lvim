@@ -1,7 +1,9 @@
 # My LunarVim configuration
 
-LunarVim? [LunarVim](https://www.lunarvim.org) is an opinionated, extensible,
-and fast IDE layer for Neovim.
+- **LunarVim**? [LunarVim](https://www.lunarvim.org) is an opinionated, extensible,
+  and fast IDE layer for **Neovim**.
+- **Neovim**? Neovim is a project/editor that seeks to aggressively refactor **Vim**.
+- **Vim**? DuckDuckGo/Google/Bing it!
 
 ## Usage
 
