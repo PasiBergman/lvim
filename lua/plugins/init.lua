@@ -162,4 +162,17 @@ lvim.plugins = {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
   },
+  {
+    "PasiBergman/cmp-nuget",
+    event = "BufWinEnter",
+    config = function()
+      local is_ok, cmp_nuget = pcall(require, "cmp-nuget")
+      if not is_ok then
+        vim.notify "cmp-nuget could not be loaded"
+      else
+        cmp_nuget.setup()
+        table.insert(lvim.builtin.cmp.sources, { name = "nuget" })
+      end
+    end,
+  },
 }
