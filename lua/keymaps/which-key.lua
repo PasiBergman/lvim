@@ -44,6 +44,8 @@ if vim.fn.executable "delta" == 1 then
   }
 end
 
+lvim.builtin.which_key.mappings["la"] = { "<cmd>lua require('plugins.telescope').code_actions()<cr>", "Code Action" }
+
 -- Which-key: +Diagnostics
 lvim.builtin.which_key.mappings["d"] = {
   name = "+Diagnotics (Trouble)",

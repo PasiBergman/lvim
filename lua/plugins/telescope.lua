@@ -93,4 +93,25 @@ Telescope.delta_git_status = function(opts)
   builtin.git_status(opts)
 end
 
+function Telescope.code_actions()
+  local opts = {
+    winblend = 15,
+    layout_config = {
+      prompt_position = "top",
+      -- width = 80,
+      -- height = 12,
+    },
+    borderchars = {
+      prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
+      results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
+      -- preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    },
+    border = {},
+    previewer = false,
+    shorten_path = false,
+  }
+  local themes = require "telescope.themes"
+  builtin.lsp_code_actions(themes.get_cursor(opts))
+end
+
 return Telescope

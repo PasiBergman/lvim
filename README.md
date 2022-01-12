@@ -64,7 +64,7 @@ brew install font-fira-code-nerd-font
 # Fast Node Manager & Node & NPM
 # --------------------------------------
 # Change the current NodeJS LTS version below
-NODE_VERSION="16.13.1"
+NODE_VERSION="16.13.2"
 fnm install $NODE_VERSION
 fnm default $NODE_VERSION
 fnm use $NODE_VERSION
