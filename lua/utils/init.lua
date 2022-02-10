@@ -28,6 +28,10 @@ utils.is_web_project = function()
   return (vim.fn.glob "package.json" ~= "" or vim.fn.glob "yarn.lock" ~= "" or vim.fn.glob "node_modules" ~= "")
 end
 
+utils.is_arduino_project = function()
+  return (vim.fn.glob "*.ino" ~= "")
+end
+
 utils.decode_json_file = function(filename)
   if vim.fn.filereadable(filename) == 0 then
     return nil

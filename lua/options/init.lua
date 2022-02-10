@@ -61,3 +61,5 @@ local mappings = {
   },
 }
 lvim.builtin.telescope.defaults.mappings = mappings
+
+-- lvim.builtin.treesitter.playground.enable = true

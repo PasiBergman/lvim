@@ -2,6 +2,10 @@
 require "lsp.emmet"
 -- Tailwindcss
 require "lsp.tailwindcss"
+-- Arduino
+require "lsp.arduino"
+-- Vue
+require "lsp.vuels"
 --
 -- Do not install langauge servers automatically
 --

@@ -34,9 +34,23 @@ lvim.plugins = {
   --
   {
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = {
+      "kyazdani42/nvim-web-devicons",
+      "nvim-telescope/telescope.nvim",
+    },
     config = function()
       require("plugins.trouble").config()
+      local trouble = require "trouble.providers.telescope"
+      local telescope = require "telescope"
+
+      telescope.setup {
+        defaults = {
+          mappings = {
+            i = { ["<c-t>"] = trouble.open_with_trouble },
+            n = { ["<c-t>"] = trouble.open_with_trouble },
+          },
+        },
+      }
     end,
     event = "BufWinEnter",
   },
@@ -162,17 +176,24 @@ lvim.plugins = {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
   },
+  --[[
+  {
+    "nvim-treesitter/playground",
+  },
+  --]]
+  --[[
   {
     "PasiBergman/cmp-nuget",
     event = "BufWinEnter",
     config = function()
-      local is_ok, cmp_nuget = pcall(require, "cmp-nuget")
-      if not is_ok then
-        vim.notify "cmp-nuget could not be loaded"
-      else
-        cmp_nuget.setup()
-        table.insert(lvim.builtin.cmp.sources, { name = "nuget" })
-      end
+      local cmp_nuget = require "cmp-nuget"
+      cmp_nuget.setup {}
+      table.insert(lvim.builtin.cmp.sources, {
+        name = "nuget",
+        keyword_length = 3,
+      })
+      lvim.builtin.cmp.formatting.source_names["nuget"] = "(NuGet)"
     end,
   },
+  --]]
 }
