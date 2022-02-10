@@ -86,11 +86,11 @@ pip3 install black isort flake8
 
 # Lua linter
 # ----------
-luarocks luacheck
+luarocks install luacheck
 
 # Lua formatter
 # -------------
-STYLUA_VERSION="0.11.0"
+STYLUA_VERSION="0.12.2"
 cd ~/.local/bin
 wget https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-${STYLUA_VERSION}-macos.zip
 unzip stylua-${STYLUA_VERSION}-macos.zip
