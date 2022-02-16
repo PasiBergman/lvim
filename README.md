@@ -105,7 +105,7 @@ LVBRANCH=rolling \
 # My LunarVim configuration
 # -------------------------
 cd ~/.config
-mv lvim lvim-original
+mv lvim lvim-orig
 git clone https://github.com/PasiBergman/lvim.git lvim-my
 ln -s lvim-my lvim
 ```
@@ -117,8 +117,9 @@ Start `lvim` and issue the following commands:
 
 ```vim
 :PackerSync
-:LspInstall vuels omnisharp tsserver sumneko_lua pyright html cssls
-:LspInstall jsonls yamlls vimls emmet_ls dockerls tailwindcss bashls
+:LspInstall jsonls yamlls vimls emmet_ls dockerls bashls
+:LspInstall volar omnisharp tsserver sumneko_lua pyright html cssls tailwindcss
+:LspInstall arduino_language_server
 ```
 
 ## Screenshots
