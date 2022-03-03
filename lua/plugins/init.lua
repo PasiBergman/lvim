@@ -181,19 +181,18 @@ lvim.plugins = {
     "nvim-treesitter/playground",
   },
   --]]
-  --[[
   {
     "PasiBergman/cmp-nuget",
     event = "BufWinEnter",
     config = function()
       local cmp_nuget = require "cmp-nuget"
       cmp_nuget.setup {}
-      table.insert(lvim.builtin.cmp.sources, {
+      -- Insert 'nuget' source before 'buffer'
+      table.insert(lvim.builtin.cmp.sources, 6, {
         name = "nuget",
-        keyword_length = 3,
+        keyword_length = 0,
       })
       lvim.builtin.cmp.formatting.source_names["nuget"] = "(NuGet)"
     end,
   },
-  --]]
 }
