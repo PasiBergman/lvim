@@ -25,6 +25,8 @@ lvim.plugins = {
   --
   {
     "puremourning/vimspector",
+    cmd = { "VimspectorInstall" , "VimspectorUpdate" },
+    fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
     config = function()
       require("plugins.vimspector").config()
     end,

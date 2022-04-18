@@ -8,6 +8,7 @@ Dashboard.config = function()
   -- Set session directory
   vim.g.dashboard_session_directory = vim.fn.expand "$HOME/.cache/lvim/sessions"
 
+  --[[
   -- Dashboard
   local ds = lvim.builtin.dashboard.custom_section
   -- local project_desc = ds.c.description
@@ -20,7 +21,8 @@ Dashboard.config = function()
     description = { "  Git files          " },
     command = "Telescope git_files",
   }
-  ds.d = nnil
+  ds.d = nil
+  --]]
 end
 
 return Dashboard
