@@ -1,14 +1,17 @@
--- Emmet LS
-require "lsp.emmet"
--- Tailwindcss
-require "lsp.tailwindcss"
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "omnisharp" })
+
 -- Arduino
 require "lsp.arduino"
+-- Emmet LS
+require "lsp.emmet"
+-- Omnisharp/C#
+require "lsp.omnisharp"
+-- Tailwindcss
+require "lsp.tailwindcss"
 -- Vue
 -- require "lsp.vuels"
 --
 -- Do not install langauge servers automatically
---
 lvim.lsp.automatic_servers_installation = false
 
 -- Configure formatters and linters manually

@@ -22,7 +22,6 @@ vim.cmd [[let &t_ut='']]
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.dashboard.active = true
-lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = false
 -- Disable floating terminal - using tmux instead
 lvim.builtin.terminal.active = false
@@ -30,3 +29,9 @@ lvim.builtin.terminal.active = false
 lvim.builtin.dap.active = false
 
 -- lvim.builtin.treesitter.playground.enable = true
+
+-- Close Nvim-Tree automatically after file opened
+-- lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
+
+-- Disable BufferLine
+-- lvim.builtin.bufferline.active = false

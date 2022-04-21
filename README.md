@@ -90,11 +90,11 @@ luarocks install luacheck
 
 # Lua formatter
 # -------------
-STYLUA_VERSION="0.12.2"
+STYLUA_VERSION="0.13.1"
 cd ~/.local/bin
-wget https://github.com/JohnnyMorganz/StyLua/releases/download/v${STYLUA_VERSION}/stylua-${STYLUA_VERSION}-macos.zip
-unzip stylua-${STYLUA_VERSION}-macos.zip
-rm stylua-${STYLUA_VERSION}-macos.zip
+wget https://github.com/JohnnyMorganz/StyLua/releases/download/${STYLUA_VERSION}/stylua-macos.zip
+unzip stylua-macos.zip
+rm stylua-macos.zip
 chmod +x stylua
 
 # LunarVim (rolling)

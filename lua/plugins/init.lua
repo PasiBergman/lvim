@@ -175,6 +175,9 @@ lvim.plugins = {
     event = "InsertEnter",
   },
   {
+    "Hoffs/omnisharp-extended-lsp.nvim",
+  },
+  {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
   },
