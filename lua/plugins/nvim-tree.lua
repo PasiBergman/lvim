@@ -7,8 +7,7 @@ NvimTree.config = function()
 
   lvim.builtin.nvimtree.setup.side = "left"
   lvim.builtin.nvimtree.show_icons.git = 1
-  lvim.builtin.nvimtree.setup.hide_dotfiles = 0
-  lvim.builtin.nvimtree.setup.auto_close = 1
+  lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
 end
 
 return NvimTree
