@@ -21,8 +21,7 @@ lvim.debug = false
 vim.cmd [[let &t_ut='']]
 
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
-lvim.builtin.terminal.active = false
+
 -- Disable floating terminal - using tmux instead
 lvim.builtin.terminal.active = false
 -- Disable debugging - using Vimspector for now

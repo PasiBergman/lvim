@@ -1,22 +1,30 @@
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
-lvim.autocommands.custom_groups = {
-  { "BufEnter", "*.tmux", "set filetype=sh" },
-  { "BufEnter", "*.vue", "set nosmartindent" },
-  { "BufLeave", "*.vue", "set smartindent" },
+lvim.autocmds = {
+  { "BufEnter", { pattern = { "*.tmux" }, command = "set filetype=sh" } },
+  { "BufEnter", { pattern = { "*.vue" }, command = "set nosmartindent" } },
+  { "BufLeave", { pattern = { "*.vue" }, command = "set smartindent" } },
 }
 
 if lvim.colorscheme == "sonokai" then
-  lvim.autocommands.custom_groups = vim.list_extend(
-    lvim.autocommands.custom_groups,
-    { { "InsertEnter", "*", "highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#2b2d3a guibg=#9ed06c" } }
-  )
+  lvim.autocmds = vim.list_extend(lvim.autocmds, {
+    {
+      "InsertEnter",
+      {
+        pattern = { "*" },
+        command = "highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#2b2d3a guibg=#9ed06c",
+      },
+    },
+  })
 end
 
 if lvim.colorscheme == "nordic" then
-  lvim.autocommands.custom_groups = vim.list_extend(lvim.autocommands.custom_groups, {
-    { "InsertEnter", "*", "highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#2a3a33 guibg=#8091b2" },
+  lvim.autocmds = vim.list_extend(lvim.autocmds, {
+    {
+      "InsertEnter",
+      { pattern = "*", command = "highlight PmenuSel ctermfg=242 ctermbg=0 gui=bold guifg=#2a3a33 guibg=#8091b2" },
+    },
     -- SymbolsOutline fix
-    { "BufEnter", "*", "highlight Comment guifg=#667084 ctermfg=0" },
-    { "BufEnter", "*", "highlight Visual guibg=#3B4252" },
+    { "BufEnter", { pattern = { "*" }, command = "highlight Comment guifg=#667084 ctermfg=0" } },
+    { "BufEnter", { pattern = { "*" }, command = "highlight Visual guibg=#3B4252" } },
   })
 end

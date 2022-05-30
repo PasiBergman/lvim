@@ -25,7 +25,7 @@ lvim.plugins = {
   --
   {
     "puremourning/vimspector",
-    cmd = { "VimspectorInstall" , "VimspectorUpdate" },
+    cmd = { "VimspectorInstall", "VimspectorUpdate" },
     fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
     config = function()
       require("plugins.vimspector").config()
@@ -198,6 +198,22 @@ lvim.plugins = {
         keyword_length = 0,
       })
       lvim.builtin.cmp.formatting.source_names["nuget"] = "(NuGet)"
+    end,
+  },
+  {
+    "David-Kunz/cmp-npm",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      local cmp_npm = require "cmp-npm"
+      cmp_npm.setup {}
+      -- Insert 'npm' source before 'buffer'
+      table.insert(lvim.builtin.cmp.sources, 7, {
+        name = "npm",
+        keyword_length = 3,
+      })
+      lvim.builtin.cmp.formatting.source_names["npm"] = "(NPM)"
     end,
   },
 }
