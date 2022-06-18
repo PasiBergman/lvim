@@ -25,11 +25,15 @@ utils.is_in_package_json = function(field)
 end
 
 utils.is_web_project = function()
-  return (vim.fn.glob "package.json" ~= "" or vim.fn.glob "yarn.lock" ~= "" or vim.fn.glob "node_modules" ~= "")
+  return (
+    vim.fn.glob("package.json", nil, nil) ~= ""
+    or vim.fn.glob("yarn.lock", nil, nil) ~= ""
+    or vim.fn.glob("node_modules", nil, nil) ~= ""
+  )
 end
 
 utils.is_arduino_project = function()
-  return (vim.fn.glob "*.ino" ~= "")
+  return (vim.fn.glob("*.ino", nil, nil) ~= "")
 end
 
 utils.decode_json_file = function(filename)
@@ -59,6 +63,16 @@ utils.get_debug_program = function()
   end
 
   return vim.fn.input("Path to program: ", vim.fn.getcwd(), "file")
+end
+
+-- Returns the index of a item in the list
+utils.indexOf = function(array, value)
+  for i, v in ipairs(array) do
+    if v == value then
+      return i
+    end
+  end
+  return nil
 end
 
 return utils

@@ -22,7 +22,11 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 --
 local utils = require "utils"
 local project_has_prettier_config = function()
-  local hasprettier = (vim.fn.glob ".prettierrc*" ~= "" or utils.is_in_package_json "prettier")
+  local hasprettier = (
+    vim.fn.glob(".prettierrc*", nil, nil, nil) ~= ""
+    or vim.fn.glob("prettier.*", nil, nil, nil) ~= ""
+    or utils.is_in_package_json "prettier"
+  )
   -- print("Project does has prettier configured? " .. tostring(hasprettier))
   return hasprettier
 end

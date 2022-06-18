@@ -1,15 +1,7 @@
--- Returns the index of a item in the list
-local indexOf = function(array, value)
-  for i, v in ipairs(array) do
-    if v == value then
-      return i
-    end
-  end
-  return nil
-end
+local utils = require "utils"
 
 vim.list_extend(lvim.lsp.override, { "volar" })
-local vuels = indexOf(lvim.lsp.override, "vuels")
+local vuels = utils.indexOf(lvim.lsp.override, "vuels")
 
 -- If vuels is found in the override list, then remove it from the list
 if vuels ~= nil then
