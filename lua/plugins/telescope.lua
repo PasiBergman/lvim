@@ -94,6 +94,7 @@ Telescope.delta_git_status = function(opts)
   builtin.git_status(opts)
 end
 
+--[[
 function Telescope.code_actions()
   local opts = {
     winblend = 15,
@@ -114,5 +115,6 @@ function Telescope.code_actions()
   local themes = require "telescope.themes"
   builtin.lsp_code_actions(themes.get_cursor(opts))
 end
+--]]
 
 return Telescope
