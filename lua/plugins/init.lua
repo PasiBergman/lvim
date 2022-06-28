@@ -43,16 +43,9 @@ lvim.plugins = {
     config = function()
       require("plugins.trouble").config()
       local trouble = require "trouble.providers.telescope"
-      local telescope = require "telescope"
 
-      telescope.setup {
-        defaults = {
-          mappings = {
-            i = { ["<c-t>"] = trouble.open_with_trouble },
-            n = { ["<c-t>"] = trouble.open_with_trouble },
-          },
-        },
-      }
+      lvim.builtin.telescope.defults.mappings.i["<C-t>"] = trouble.open_with_trouble
+      lvim.builtin.telescope.defults.mappings.n["<C-t>"] = trouble.open_with_trouble
     end,
     event = "BufWinEnter",
   },
@@ -229,6 +222,15 @@ lvim.plugins = {
         css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
         css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
+    end,
+  },
+  --
+  -- Github Copilot
+  --
+  {
+    "github/copilot.vim",
+    config = function()
+      require("plugins.copilot").config_vim()
     end,
   },
 }
