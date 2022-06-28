@@ -44,8 +44,8 @@ lvim.plugins = {
       require("plugins.trouble").config()
       local trouble = require "trouble.providers.telescope"
 
-      lvim.builtin.telescope.defults.mappings.i["<C-t>"] = trouble.open_with_trouble
-      lvim.builtin.telescope.defults.mappings.n["<C-t>"] = trouble.open_with_trouble
+      lvim.builtin.telescope.defaults.mappings.i["<C-t>"] = trouble.open_with_trouble
+      lvim.builtin.telescope.defaults.mappings.n["<C-t>"] = trouble.open_with_trouble
     end,
     event = "BufWinEnter",
   },
