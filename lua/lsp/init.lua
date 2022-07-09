@@ -23,8 +23,8 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 local utils = require "utils"
 local project_has_prettier_config = function()
   local hasprettier = (
-    vim.fn.glob(".prettierrc*", nil, nil, nil) ~= ""
-    or vim.fn.glob("prettier.*", nil, nil, nil) ~= ""
+    vim.fn.glob ".prettierrc*" ~= ""
+    or vim.fn.glob "prettier.*" ~= ""
     or utils.is_in_package_json "prettier"
   )
   -- print("Project does has prettier configured? " .. tostring(hasprettier))
@@ -83,6 +83,17 @@ local linters_table = {
       "markdown",
     },
   },
+  --[[
+  {
+    exe = "swift-format",
+    args = {
+      "lint",
+    },
+    filetype = {
+      "swift",
+    },
+  },
+  --]]
 }
 
 local formatters_table = {
@@ -124,6 +135,12 @@ local formatters_table = {
     args = { "--profile", "black" },
     filetypes = {
       "python",
+    },
+  },
+  {
+    exe = "swiftformat",
+    filetype = {
+      "swift",
     },
   },
 }
