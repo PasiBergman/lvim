@@ -83,17 +83,6 @@ local linters_table = {
       "markdown",
     },
   },
-  --[[
-  {
-    exe = "swift-format",
-    args = {
-      "lint",
-    },
-    filetype = {
-      "swift",
-    },
-  },
-  --]]
 }
 
 local formatters_table = {
@@ -137,12 +126,16 @@ local formatters_table = {
       "python",
     },
   },
+  --[[
+  -- Using swift-format instead of swiftformat
+  -- See ./lua/lsp/sourcekit.lua
   {
     exe = "swiftformat",
     filetype = {
       "swift",
     },
   },
+  --]]
 }
 
 if project_has_prettier_config() == true then
