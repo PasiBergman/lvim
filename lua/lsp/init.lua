@@ -8,8 +8,8 @@ require "lsp.emmet"
 require "lsp.omnisharp"
 -- Tailwindcss
 require "lsp.tailwindcss"
--- Vue
--- require "lsp.vuels"
+-- Sourcekit / Swift / SwiftUI / Objective-C
+require "lsp.sourcekit"
 --
 -- Do not install langauge servers automatically
 lvim.lsp.automatic_servers_installation = false
