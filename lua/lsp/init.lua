@@ -33,7 +33,7 @@ end
 
 local linters_table = {
   {
-    exe = "eslint_d",
+    command = "eslint_d",
     filetypes = {
       "javascript",
       "javascriptreact",
@@ -44,7 +44,7 @@ local linters_table = {
     },
   },
   {
-    exe = "shellcheck",
+    command = "shellcheck",
     filetypes = {
       "sh",
       "shell",
@@ -53,32 +53,33 @@ local linters_table = {
     },
   },
   {
-    exe = "stylelint",
+    command = "stylelint",
     filetypes = {
       "css",
       "scss",
+      "sass",
     },
   },
   {
-    exe = "luacheck",
+    command = "luacheck",
     filetypes = {
       "lua",
     },
   },
   {
-    exe = "markdownlint",
+    command = "markdownlint",
     filetype = {
       "markdown",
     },
   },
   {
-    exe = "flake8",
+    command = "flake8",
     filetype = {
       "python",
     },
   },
   {
-    exe = "write-good",
+    command = "write-good",
     filetype = {
       "markdown",
     },
@@ -87,13 +88,13 @@ local linters_table = {
 
 local formatters_table = {
   {
-    exe = "stylua",
+    command = "stylua",
     filetypes = {
       "lua",
     },
   },
   {
-    exe = "eslint_d",
+    command = "eslint_d",
     filetypes = {
       "javascript",
       "javascriptreact",
@@ -104,7 +105,7 @@ local formatters_table = {
     },
   },
   {
-    exe = "shfmt",
+    command = "shfmt",
     filetypes = {
       "sh",
       "shell",
@@ -113,14 +114,14 @@ local formatters_table = {
     },
   },
   {
-    exe = "black",
+    command = "black",
     args = { "--fast" },
     filetypes = {
       "python",
     },
   },
   {
-    exe = "isort",
+    command = "isort",
     args = { "--profile", "black" },
     filetypes = {
       "python",
@@ -130,7 +131,7 @@ local formatters_table = {
   -- Using swift-format instead of swiftformat
   -- See ./lua/lsp/sourcekit.lua
   {
-    exe = "swiftformat",
+    command = "swiftformat",
     filetype = {
       "swift",
     },
@@ -140,8 +141,11 @@ local formatters_table = {
 
 if project_has_prettier_config() == true then
   table.insert(formatters_table, {
-    exe = "prettier",
+    command = "prettier",
     filetypes = {
+      "css",
+      "scss",
+      "sass",
       "html",
       "javascript",
       "javascriptreact",
@@ -156,7 +160,7 @@ if project_has_prettier_config() == true then
   })
 else
   table.insert(formatters_table, {
-    exe = "prettier",
+    command = "prettier",
     filetypes = {
       "html",
       "json",
