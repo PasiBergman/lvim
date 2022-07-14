@@ -212,7 +212,17 @@ lvim.plugins = {
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({ "python", "html", "css", "scss", "typescript", "vue" }, {
+      require("colorizer").setup({
+        "python",
+        "css",
+        "scss",
+        "typescript",
+        "vue",
+        "lua",
+        html = {
+          mode = "foreground",
+        },
+      }, {
         RGB = true, -- #RGB hex codes
         RRGGBB = true, -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
