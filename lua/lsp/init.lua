@@ -9,9 +9,9 @@ require "lsp.tailwindcss"
 -- Sourcekit / Swift / SwiftUI / Objective-C
 require "lsp.sourcekit"
 --
-require "lsp.formatters"
+require "lsp.null-ls.formatters"
 --
-require "lsp.linters"
+require "lsp.null-ls.linters"
 --
 -- Do not install langauge servers automatically
 lvim.lsp.automatic_servers_installation = false
