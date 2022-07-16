@@ -75,4 +75,16 @@ utils.indexOf = function(array, value)
   return nil
 end
 
+-- Does the current project have a Prettier configuration?
+-- Assumes, that LunarVim has been opened in the root of the project
+utils.project_has_prettier_config = function()
+  local hasprettier = (
+    vim.fn.glob ".prettierrc*" ~= ""
+    or vim.fn.glob "prettier.*" ~= ""
+    or utils.is_in_package_json "prettier"
+  )
+  -- print("Project does has prettier configured? " .. tostring(hasprettier))
+  return hasprettier
+end
+
 return utils
