@@ -1,11 +1,8 @@
--- Format buffer when buffer/file is saved
-lvim.format_on_save = true
+-- Leader key
+lvim.leader = "space"
 
 -- Theme/Colorscheme
 lvim.colorscheme = "nordic"
-
--- Leader key
-lvim.leader = "space"
 
 -- Keymap timeout
 vim.go.timeoutlen = 500
@@ -31,6 +28,3 @@ lvim.builtin.dap.active = false
 
 -- Close Nvim-Tree automatically after file opened
 -- lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
-
--- Disable BufferLine
--- lvim.builtin.bufferline.active = false
