@@ -28,3 +28,5 @@ lvim.builtin.dap.active = false
 
 -- Close Nvim-Tree automatically after file opened
 -- lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
+
+lvim.builtin.notify.active = true
