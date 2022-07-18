@@ -20,10 +20,10 @@ require "lsp.null-ls.linters"
 -- Do not install langauge servers automatically
 lvim.lsp.automatic_servers_installation = false
 
--- Disable formatting capability of tsserver and jsonls
+-- Disable formatting capability of tsserver, jsonls, html and volar
 -- as we use prettier and/or eslint_d to format/fix
 lvim.lsp.on_attach_callback = function(client, _)
-  if client.name ~= "tsserver" and client.name ~= "jsonls" then
+  if client.name ~= "tsserver" and client.name ~= "jsonls" and client.name ~= "html" and client.name ~= "volar" then
     return
   end
 
