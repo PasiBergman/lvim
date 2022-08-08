@@ -8,6 +8,8 @@ require "lsp.omnisharp"
 require "lsp.tailwindcss"
 -- Sourcekit / Swift / SwiftUI / Objective-C
 require "lsp.sourcekit"
+-- SQL
+require "lsp.sql"
 --
 -- Null LS formatters
 require "lsp.null-ls.formatters"
