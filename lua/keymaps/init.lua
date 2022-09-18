@@ -32,6 +32,6 @@ vim.api.nvim_set_keymap("i", "?", "?<C-g>u", { noremap = true, silent = true })
 -- Remove LunarVim keymaps
 lvim.keys.visual_mode = {}
 -- I use caps lock as ESC so the following LunarVim keymaps are not needed.
-vim.api.nvim_del_keymap("i", "jj")
-vim.api.nvim_del_keymap("i", "jk")
-vim.api.nvim_del_keymap("i", "kj")
+-- vim.api.nvim_del_keymap("i", "jj")
+-- vim.api.nvim_del_keymap("i", "jk")
+-- vim.api.nvim_del_keymap("i", "kj")
