@@ -4,14 +4,14 @@ Nordic.config = function()
   require("nordic").colorscheme {
     -- Underline style used for spelling
     -- Options: 'none', 'underline', 'undercurl'
-    underline_option = "none",
+    underline_option = "undercurl",
 
     -- Italics for certain keywords such as constructors, functions,
     -- labels and namespaces
     italic = true,
 
     -- Italic styled comments
-    italic_comments = false,
+    italic_comments = true,
 
     -- Minimal mode: different choice of colors for Tabs and StatusLine
     minimal_mode = false,
@@ -31,6 +31,11 @@ Nordic.config = function()
     --   bg(name) -> default or alternate background color based on configuration
     custom_colors = function(c, s, cs)
       return {
+        { "PmenuSel", "#2a3a33", "#8091b2", s.bold },
+        -- SymbolsOutline fix
+        { "Comment", "#667084", nil, nil },
+        { "Visual", nil, "#3B4252", nil },
+        -- Examples:
         -- Single highlight group (name, foreground, background, style)
         { "DummyHighlightName1", c.green, "#475063", s.undercurl },
         {
@@ -39,12 +44,11 @@ Nordic.config = function()
           c.white,
           s.bold,
         },
-
         -- Or a function that can return any of these combinations
         function(--[[c, s, cs]])
           return {
             {
-              "DummyHightlightName4",
+              "DummyHighlightName4",
               c.red,
               cs.bg "plugin_name", -- Alternate or default background based on user configuration
               cs.underline,

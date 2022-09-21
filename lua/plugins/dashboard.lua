@@ -1,7 +1,7 @@
 local Dashboard = {}
 
 Dashboard.config = function()
-  if not lvim.builtin.dashboard.active then
+  if not lvim.builtin.alpha.active then
     return
   end
 

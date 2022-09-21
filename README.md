@@ -35,7 +35,7 @@ For tmux config details see my [dotfiles](https://github.com/PasiBergman/dotfile
 
 ## Setup/Dependencies
 
-- [Neovim v0.6+](https://github.com/neovim/neovim)
+- [Neovim v0.7+](https://github.com/neovim/neovim)
 - [LunarVim rolling](https://github.com/LunarVim/LunarVim)
 
 ### Installation (macOS)
