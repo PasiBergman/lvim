@@ -3,17 +3,17 @@
 -- ==================
 --
 -- Dasboard
-require("plugins.dashboard").config()
+require("user.plugins.dashboard").config()
 -- Lualine
-require("plugins.lualine").config()
+require("user.plugins.lualine").config()
 -- Nvim-tree
-require("plugins.nvim-tree").config()
+require("user.plugins.nvim-tree").config()
 -- Debug (DAP)
-require("plugins.dap").config()
+require("user.plugins.dap").config()
 -- Treesitter
-require("plugins.treesitter").config()
+require("user.plugins.treesitter").config()
 -- Barbar
-require("plugins.barbar").config()
+require("user.plugins.barbar").config()
 --
 -- ==================
 -- Additional plugins
@@ -28,7 +28,7 @@ lvim.plugins = {
     cmd = { "VimspectorInstall", "VimspectorUpdate" },
     fn = { "vimspector#Launch()", "vimspector#ToggleBreakpoint", "vimspector#Continue" },
     config = function()
-      require("plugins.vimspector").config()
+      require("user.plugins.vimspector").config()
     end,
   },
   --
@@ -41,7 +41,7 @@ lvim.plugins = {
       "nvim-telescope/telescope.nvim",
     },
     config = function()
-      require("plugins.trouble").config()
+      require("user.plugins.trouble").config()
       local trouble = require "trouble.providers.telescope"
 
       lvim.builtin.telescope.defaults.mappings.i["<C-t>"] = trouble.open_with_trouble
@@ -63,7 +63,7 @@ lvim.plugins = {
     "ruifm/gitlinker.nvim",
     event = "BufRead",
     config = function()
-      require("plugins.gitlinker").config()
+      require("user.plugins.gitlinker").config()
     end,
     requires = "nvim-lua/plenary.nvim",
   },
@@ -73,14 +73,14 @@ lvim.plugins = {
   {
     "phaazon/hop.nvim",
     config = function()
-      require("plugins.hop").config()
+      require("user.plugins.hop").config()
     end,
     event = "BufRead",
   },
   {
     "ThePrimeagen/harpoon",
     config = function()
-      require("plugins.harpoon").config()
+      require("user.plugins.harpoon").config()
     end,
     event = "BufWinEnter",
     requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
@@ -91,14 +91,14 @@ lvim.plugins = {
   {
     "folke/zen-mode.nvim",
     config = function()
-      require("plugins.zen-mode").config()
+      require("user.plugins.zen-mode").config()
     end,
     event = "BufRead",
   },
   {
     "folke/twilight.nvim",
     config = function()
-      require("plugins.twilight").config()
+      require("user.plugins.twilight").config()
     end,
     event = "BufRead",
   },
@@ -125,38 +125,38 @@ lvim.plugins = {
   {
     "andersevenrud/nordic.nvim",
     config = function()
-      require("themes.nordic").config()
+      require("user.themes.nordic").config()
     end,
   },
   --[[
   {
     "shaunsingh/nord.nvim",
     config = function()
-      require("themes.nord").config()
+      require("user.themes.nord").config()
     end,
   },
   {
     "folke/tokyonight.nvim",
     config = function()
-      require("themes.tokyonight").config()
+      require("user.themes.tokyonight").config()
     end,
   },
   {
     "rafamadriz/neon",
     config = function()
-      require("themes.neon").config()
+      require("user.themes.neon").config()
     end,
   },
   {
     "sainnhe/sonokai",
     config = function()
-      require("themes.sonokai").config()
+      require("user.themes.sonokai").config()
     end,
   },
   {
     "rmehri01/onenord.nvim",
     config = function()
-      require("themes.onenord").config()
+      require("user.themes.onenord").config()
     end,
   },
   --]]
@@ -248,7 +248,7 @@ lvim.plugins = {
   {
     "github/copilot.vim",
     config = function()
-      require("plugins.copilot").config_vim()
+      require("user.plugins.copilot").config_vim()
     end,
   },
 }

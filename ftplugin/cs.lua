@@ -1,13 +1,15 @@
 vim.cmd [[setlocal ts=4 sw=4]]
 
-if lvim.debug ~= true then return end
+if lvim.debug ~= true then
+  return
+end
 
 local status_ok, dap = pcall(require, "dap")
 if not status_ok then
   return
 end
 
-local utils = require "utils"
+local utils = require "user.utils"
 dap.configurations.cs = {
   {
     type = "netcoredbg",

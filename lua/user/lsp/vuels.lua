@@ -1,4 +1,4 @@
-local utils = require "utils"
+local utils = require "user.utils"
 
 vim.list_extend(lvim.lsp.override, { "volar" })
 local vuels = utils.indexOf(lvim.lsp.override, "vuels")

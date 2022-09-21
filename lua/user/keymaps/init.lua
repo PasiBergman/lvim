@@ -1,5 +1,5 @@
 -- Configure which-key plugin keymaps
-require "keymaps.which-key"
+require "user.keymaps.which-key"
 
 -- Yank to line end - obsolete on Neovim 0.6+
 -- vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })

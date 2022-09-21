@@ -1,4 +1,4 @@
-local utils = require "utils"
+local utils = require "user.utils"
 -- Skip configuring emmet language server client if project
 -- does not look like a Arduino project
 if not utils.is_arduino_project() then

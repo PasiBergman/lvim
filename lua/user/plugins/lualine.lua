@@ -5,23 +5,23 @@ Lualine.config = function()
     return
   end
 
-  local components = require "lvim.core.lualine.components"
+  -- local components = require "lvim.core.lualine.components"
 
   -- Nord is supported by lualine.nvim
   -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
   lvim.builtin.lualine.options.theme = "nord"
 
   -- Remove treesitter from the config
-  lvim.builtin.lualine.sections.lualine_x = {
-    components.diagnostics,
-    components.lsp,
-    components.filetype,
-  }
+  -- lvim.builtin.lualine.sections.lualine_x = {
+  --   components.diagnostics,
+  --   components.lsp,
+  --   components.filetype,
+  -- }
 
   -- Replace progressbar with location
-  lvim.builtin.lualine.sections.lualine_z = {
-    components.location,
-  }
+  -- lvim.builtin.lualine.sections.lualine_z = {
+  --   components.location,
+  -- }
 
   -- Remove bold from lsp info and set foreground color to dimmer one
   lvim.builtin.lualine.on_config_done = function(lualine)

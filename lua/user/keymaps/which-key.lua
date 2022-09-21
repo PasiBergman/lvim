@@ -31,15 +31,15 @@ lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua require('gitlinker').get_buf
 -- Delta previewer custom Telescope functions
 if vim.fn.executable "delta" == 1 then
   lvim.builtin.which_key.mappings["gS"] = {
-    "<cmd>lua require('plugins.telescope').delta_git_status()<cr>",
+    "<cmd>lua require('user.plugins.telescope').delta_git_status()<cr>",
     "Git status",
   }
   lvim.builtin.which_key.mappings["gL"] = {
-    "<cmd>lua require('plugins.telescope').delta_git_commits()<cr>",
+    "<cmd>lua require('user.plugins.telescope').delta_git_commits()<cr>",
     "Git commits",
   }
   lvim.builtin.which_key.mappings["gM"] = {
-    "<cmd>lua require('plugins.telescope').delta_git_bcommits()<cr>",
+    "<cmd>lua require('user.plugins.telescope').delta_git_bcommits()<cr>",
     "Git bcommits",
   }
 end

@@ -1,6 +1,6 @@
 -- Configure formatters manually
 local formatters = require "lvim.lsp.null-ls.formatters"
-local utils = require "utils"
+local utils = require "user.utils"
 
 local prettier_filetypes = {
   "html",

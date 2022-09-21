@@ -1,23 +1,23 @@
 -- Arduino
-require "lsp.arduino"
+require "user.lsp.arduino"
 -- Emmet LS
-require "lsp.emmet"
+require "user.lsp.emmet"
 -- Omnisharp/C#
-require "lsp.omnisharp"
+require "user.lsp.omnisharp"
 -- Tailwindcss
-require "lsp.tailwindcss"
+require "user.lsp.tailwindcss"
 -- Sourcekit / Swift / SwiftUI / Objective-C
-require "lsp.sourcekit"
+require "user.lsp.sourcekit"
 -- SQL
-require "lsp.sql"
+require "user.lsp.sql"
 --
 -- Null LS formatters
-require "lsp.null-ls.formatters"
+require "user.lsp.null-ls.formatters"
 -- Null LS linters
-require "lsp.null-ls.linters"
+require "user.lsp.null-ls.linters"
 --
 -- Vetur (Vue LS) is NOT configured because Volar is used instead
--- require "lsp.vuels"
+-- require "user.lsp.vuels"
 --
 -- Do not install langauge servers automatically
 lvim.lsp.automatic_servers_installation = false

@@ -1,20 +1,20 @@
 -- General configuration
-require "options"
+require "user.options"
 
 -- Themes/Colorschemes and highlights
-require "themes"
+require "user.themes"
 
 -- Configure plugins
-require "plugins"
+require "user.plugins"
 
 -- Key mappings and which-key
-require "keymaps"
+require "user.keymaps"
 
 -- Commands
-require "commands"
+require "user.commands"
 
 -- Autocommands
-require "commands.autocommands"
+require "user.commands.autocommands"
 
 -- LSP
-require "lsp"
+require "user.lsp"
