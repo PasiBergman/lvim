@@ -1,33 +1,48 @@
--- Leader key
-lvim.leader = "space"
-
--- Theme/Colorscheme
+lvim.log.level = "warn"
+lvim.format_on_save = true
 lvim.colorscheme = "nordic"
 
--- Keymap timeout
-vim.go.timeoutlen = 500
+-- to disable icons and use a minimalist setup, uncomment the following
+-- lvim.use_icons = false
 
--- Relative row numbers
-vim.go.relativenumber = true
+lvim.builtin.alpha.active = true
+lvim.builtin.alpha.mode = "dashboard"
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
--- Debug LunarVim
-lvim.debug = false
+-- Treesitter parsers
+lvim.builtin.treesitter.ensure_installed = {
+	"bash",
+	"c",
+	"c_sharp",
+	"css",
+	"gitignore",
+	"java",
+	"javascript",
+	"json",
+	"lua",
+	"python",
+	"rust",
+	"swift",
+	"tsx",
+	"typescript",
+	"vue",
+	"yaml",
+	"comment",
+	"dockerfile",
+	"html",
+	"java",
+	"jsdoc",
+	"json",
+	"jsonc",
+	"markdown",
+	"r",
+	"scss",
+	"sql",
+	"toml",
+	"yaml",
+}
 
--- kitty
--- https://sw.kovidgoyal.net/kitty/faq/#some-special-symbols-are-rendered-small-truncated-in-kitty
--- vim.cmd [[let &t_ut='']]
-
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-
--- Disable floating terminal - using tmux instead
-lvim.builtin.terminal.active = false
-
--- Disable debugging - using Vimspector for now
-lvim.builtin.dap.active = false
-
--- lvim.builtin.treesitter.playground.enable = true
-
--- Close Nvim-Tree automatically after file opened
--- lvim.builtin.nvimtree.setup.actions.open_file.quit_on_open = true
-
--- lvim.builtin.notify.active = true
+lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.highlight.enable = true
