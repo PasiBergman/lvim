@@ -1,32 +1,27 @@
 -- -- set a formatter, this will override the language server formatting capabilities (if it exists)
-local null_ls = require("null-ls")
+local null_ls = require "null-ls"
 local diagnostics = null_ls.builtins.diagnostics
+local user_utils = require "user.utils"
 
-local linters = require("lvim.lsp.null-ls.linters")
-linters.setup({
-	diagnostics.eslint_d.with({
-		condition = function(utils)
-			return utils.root_has_file({
-				".eslintrc",
-				".eslintrc.js",
-				"eslint.config.js",
-				".eslintrc.cjs",
-				".eslintrc.yaml",
-				".eslintrc.yml",
-				".eslintrc.json",
-			})
-		end,
-	}),
-	diagnostics.commitlint,
-	diagnostics.flake8,
-	diagnostics.jsonlint,
-	diagnostics.luacheck,
-	diagnostics.markdownlint,
-	diagnostics.shellcheck,
-	diagnostics.stylelint,
-	diagnostics.yamllint,
-	diagnostics.zsh,
-})
+local config_file_names_eslint = require("user.languages.config-file-names").eslint
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  diagnostics.eslint_d.with {
+    condition = function(nls_utils)
+      return nls_utils.root_has_file(config_file_names_eslint) or user_utils.is_in_package_json "eslint"
+    end,
+  },
+  diagnostics.commitlint,
+  diagnostics.flake8,
+  diagnostics.jsonlint,
+  diagnostics.luacheck,
+  diagnostics.markdownlint,
+  diagnostics.shellcheck,
+  diagnostics.stylelint,
+  diagnostics.yamllint,
+  diagnostics.zsh,
+}
 
 -- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
