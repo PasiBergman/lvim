@@ -18,3 +18,8 @@ require "commands.autocommands"
 
 -- LSP
 require "lsp"
+
+vim.notify(
+  "Upcoming merge from branch feature/update-2022-10. Settings will change considerably. Merge will be done around November 12th 2022.",
+  vim.log.levels.WARN
+)
