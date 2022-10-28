@@ -11,6 +11,17 @@ lvim.builtin.autopairs.active = false
 --
 lvim.plugins = {
   --
+  -- Motion: Hop
+  --
+  {
+    "phaazon/hop.nvim",
+    branch = "v2",
+    event = "BufRead",
+    config = function()
+      require("user.plugins.hop").config()
+    end,
+  },
+  --
   -- Diagnostics
   --
   {
@@ -34,12 +45,6 @@ lvim.plugins = {
     end,
     event = "BufWinEnter",
     requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
-  },
-  --
-  -- Telescope
-  --
-  {
-    "nvim-telescope/telescope-fzy-native.nvim",
   },
   --
   -- Themes
