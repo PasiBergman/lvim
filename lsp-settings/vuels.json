@@ -1,8 +1,0 @@
-{
-  "vetur.completion.autoImport": true,
-  "vetur.completion.tagCasing": "kebab",
-  "vetur.useWorkspaceDependencies": true,
-  "vetur.validation.script": true,
-  "vetur.validation.style": true,
-  "vetur.validation.template": true
-}
