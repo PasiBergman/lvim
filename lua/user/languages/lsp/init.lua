@@ -3,7 +3,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
   "bicep",
   "jsonls",
-  "jsoncls",
   "omnisharp",
   "pyright",
   "sumneko_lua",
@@ -12,13 +11,15 @@ lvim.lsp.installer.setup.ensure_installed = {
 }
 
 -- OmniSharp custom configuration
-require("user.languages.lsp.omnisharp")
+require "user.languages.lsp.omnisharp"
 
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)
   if client.server_capabilities.signatureHelpProvider then
     local status_ok, lsp_overloads = pcall(require, "lsp-overloads")
-    if not status_ok then return end
+    if not status_ok then
+      return
+    end
     -- https://github.com/Issafalcon/lsp-overloads.nvim#configuration
     lsp_overloads.setup(client, {
       -- Defaults
@@ -27,7 +28,7 @@ lvim.lsp.on_attach_callback = function(client, _)
         previous_signature = "<C-k>",
         next_parameter = "<C-l>",
         previous_parameter = "<C-h>",
-      }
+      },
     })
   end
 end

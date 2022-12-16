@@ -1,5 +1,11 @@
-local status_ok, dap = pcall(require, "dap")
-if not status_ok then return end
+local dap_status_ok, dap = pcall(require, "dap")
+if not dap_status_ok then
+  return
+end
+local utils_status_ok, utils = pcall(require, "user.utils")
+if not utils_status_ok then
+  return
+end
 
 -- Note December 16 2022
 -- Manually installed netcoredbg for Mac M1 ARM64
@@ -15,17 +21,15 @@ dap.adapters.coreclr = {
   args = { "--interpreter=vscode" },
 }
 
-dap.configurations.cs = {
-  {
-    type = "coreclr",
-    name = "launch - netcoredbg",
-    request = "launch",
-    program = function()
-      return vim.fn.input(
-        "Path to dll: ",
-        vim.fn.getcwd() .. "/src/<>.BE.API/bin/Debug/net7.0/<>.BE.API.dll",
-        "file"
-      )
-    end,
-  },
-}
+dap.configurations.cs = utils.get_debug_config()
+
+if dap.configurations.cs == nil then
+  dap.configurations.cs = {
+    {
+      type = "coreclr",
+      name = "launch - netcoredbg",
+      request = "launch",
+      program = utils.get_debug_program(),
+    },
+  }
+end
