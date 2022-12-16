@@ -1,7 +1,7 @@
 --
 -- Which-key config
 --
-require("user.keymaps.which-key")
+require "user.keymaps.which-key"
 --
 --
 lvim.leader = "space"

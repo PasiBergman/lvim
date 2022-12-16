@@ -6,6 +6,6 @@ local aucommand = "set filetype=markdown"
 
 vim.api.nvim_create_augroup(augroup, { clear = true })
 vim.api.nvim_create_autocmd(eventlist, {
-	pattern = globs,
-	command = aucommand,
+  pattern = globs,
+  command = aucommand,
 })
