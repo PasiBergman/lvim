@@ -108,4 +108,14 @@ lvim.plugins = {
       require("user.plugins.copilot").config_vim()
     end,
   },
+  --
+  -- LSP Overloads Nvim
+  -- Native LSP signatureHelper handler doesn't provide an easy way to view all
+  -- the possible overloads and parameter details for signatures
+  --
+  -- See lua/users/lsp/init.lua for configuration
+  {
+    event = "BufRead",
+    'Issafalcon/lsp-overloads.nvim'
+  }
 }

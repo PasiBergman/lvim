@@ -1,17 +1,36 @@
 -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-	"bashls",
-	"bicep",
-	"jsonls",
-	"omnisharp",
-	"pyright",
-	"sumneko_lua",
-	"tsserver",
-	"volar",
+  "bashls",
+  "bicep",
+  "jsonls",
+  "jsoncls",
+  "omnisharp",
+  "pyright",
+  "sumneko_lua",
+  "tsserver",
+  "volar",
 }
 
 -- OmniSharp custom configuration
 require("user.languages.lsp.omnisharp")
+
+-- Setup lsp-overloads if plugin is installed
+lvim.lsp.on_attach_callback = function(client, _)
+  if client.server_capabilities.signatureHelpProvider then
+    local status_ok, lsp_overloads = pcall(require, "lsp-overloads")
+    if not status_ok then return end
+    -- https://github.com/Issafalcon/lsp-overloads.nvim#configuration
+    lsp_overloads.setup(client, {
+      -- Defaults
+      keymaps = {
+        next_signature = "<C-j>",
+        previous_signature = "<C-k>",
+        next_parameter = "<C-l>",
+        previous_parameter = "<C-h>",
+      }
+    })
+  end
+end
 
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
