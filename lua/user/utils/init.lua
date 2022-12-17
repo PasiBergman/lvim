@@ -68,7 +68,7 @@ utils.get_debug_config = function()
     local configs = vscode_launch_file["configurations"]
     if configs ~= nil then
       for j = 1, #configs do
-        if configs[j]["request"] == "launch2" then
+        if configs[j]["request"] == "launch" then
           local config = utils.replace_string_values(configs[j], "${workspaceRoot}", vim.fn.getcwd())
           return { config }
         end
