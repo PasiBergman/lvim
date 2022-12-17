@@ -9,7 +9,7 @@ end
 
 -- Note December 16 2022
 -- Manually installed netcoredbg for Mac M1 ARM64
--- https://github.com/codeprefect/netcoredbg/releases/tag/2.2.0-950
+-- https://github.com/codeprefect/netcoredbg/releases/
 --
 -- Remember to allow execution of unsigned netcoredbg executabe on macOS
 --
