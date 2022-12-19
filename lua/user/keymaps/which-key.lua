@@ -31,23 +31,23 @@ lvim.builtin.which_key.mappings["q"] = {
 lvim.builtin.which_key.mappings["sg"] = { "<cmd>Telescope grep_string<cr>", "Grep cursor word" }
 lvim.builtin.which_key.mappings["sG"] = { "<cmd>Telescope git_files<cr>", "Git files" }
 
--- Which-key: +Git
-lvim.builtin.which_key.mappings["gy"] = { "<cmd>lua require('gitlinker').get_buf_range_url('n')<cr>", "Gitlinker" }
 -- Delta previewer custom Telescope functions
 if vim.fn.executable "delta" == 1 then
   lvim.builtin.which_key.mappings["gS"] = {
-    "<cmd>lua require('plugins.telescope').delta_git_status()<cr>",
+    "<cmd>lua require('user.plugins.telescope').delta_git_status()<cr>",
     "Git status",
   }
   lvim.builtin.which_key.mappings["gL"] = {
-    "<cmd>lua require('plugins.telescope').delta_git_commits()<cr>",
+    "<cmd>lua require('user.plugins.telescope').delta_git_commits()<cr>",
     "Git commits",
   }
   lvim.builtin.which_key.mappings["gM"] = {
-    "<cmd>lua require('plugins.telescope').delta_git_bcommits()<cr>",
+    "<cmd>lua require('user.plugins.telescope').delta_git_bcommits()<cr>",
     "Git bcommits",
   }
 end
+
+lvim.builtin.which_key.mappings["lR"] = { "<cmd>edit<cr>", "Restart LSPs" }
 
 -- Which-key: +Sessions
 lvim.builtin.which_key.mappings["S"] = {
