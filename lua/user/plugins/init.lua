@@ -118,4 +118,24 @@ lvim.plugins = {
     event = "BufRead",
     "Issafalcon/lsp-overloads.nvim",
   },
+  --
+  -- fidget.nvim: Standalone UI for nvim-lsp progress.
+  --
+  {
+    "j-hui/fidget.nvim",
+    event = "BufRead",
+    config = function()
+      require("fidget").setup {}
+    end,
+  },
+  --
+  -- Undotree
+  --
+  {
+    "mbbill/undotree",
+    event = "BufRead",
+    config = function()
+      vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+    end,
+  },
 }
