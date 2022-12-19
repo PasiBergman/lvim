@@ -16,31 +16,39 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- override a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
-vim.api.nvim_set_keymap("n", "x", '"xx', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "dd", '"ddd', { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "D", '"dD', { noremap = true, silent = true })
 -- Keep centered
-vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
+vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true })
+vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true })
+vim.keymap.set("n", "J", "mzJ`z", { noremap = true, silent = true })
 -- Undo break points
-vim.api.nvim_set_keymap("i", ".", ".<C-g>u", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", ",", ",<C-g>u", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "!", "!<C-g>u", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "?", "?<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", ".", ".<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", ",", ",<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", "!", "!<C-g>u", { noremap = true, silent = true })
+vim.keymap.set("i", "?", "?<C-g>u", { noremap = true, silent = true })
+
+-- Paste and move highlighted text to void register
+vim.keymap.set("x", "<leader>P", '"_dP')
+-- When deleting, put deleted char/text to x or d register
+vim.keymap.set("n", "x", '"xx', { noremap = true, silent = true })
+vim.keymap.set("n", "dd", '"ddd', { noremap = true, silent = true })
+vim.keymap.set("n", "D", '"dD', { noremap = true, silent = true })
+
+-- Quiclist and local list jumping
+vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
 -- -- Move text
--- vim.api.nvim_set_keymap("v", "J", "'>+1<CR>gv=gv", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("v", "K", "'<-2<CR>gv=gv", { noremap = true, silent = true })
+-- vim.keymap.set("v", "J", "'>+1<CR>gv=gv", { noremap = true, silent = true })
+-- vim.keymap.set("v", "K", "'<-2<CR>gv=gv", { noremap = true, silent = true })
 -- Paste last yanked (not deleted) register
--- vim.api.nvim_set_keymap("n", ",p", '"0p', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", ",P", '"0P', { noremap = true, silent = true })
+-- vim.keymap.set("n", ",p", '"0p', { noremap = true, silent = true })
+-- vim.keymap.set("n", ",P", '"0P', { noremap = true, silent = true })
 
 -- -- See lua/user/commands/init.lua
--- vim.api.nvim_set_keymap("n", "<F5>", ":ExecSh<cr>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F6>", ":ExecVsh<cr>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F5>", ":ExecSh<cr>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F6>", ":ExecVsh<cr>", { noremap = true, silent = true })
 -- Close buffers with name "No name"
--- vim.api.nvim_set_keymap("n", "<F7>", [[:bdel! "No name"<cr>]], { noremap = true, silent = true })
+-- vim.keymap.set("n", "<F7>", [[:bdel! "No name"<cr>]], { noremap = true, silent = true })
 
 -- Remove LunarVim keymaps
 lvim.keys.visual_mode = {}
