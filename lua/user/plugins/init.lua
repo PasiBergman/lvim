@@ -138,4 +138,19 @@ lvim.plugins = {
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     end,
   },
+  --
+  -- EditorConfig support
+  --
+  {
+    "gpanders/editorconfig.nvim",
+    event = "BufRead",
+    --[[
+    config = function()
+      -- Custom properties can be added through the properties table:
+      require('editorconfig').properties.foo = function(bufnr, val)
+        vim.b[bufnr].foo = val
+      end
+    end,
+    --]]
+  },
 }
