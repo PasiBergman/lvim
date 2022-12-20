@@ -1,0 +1,82 @@
+{
+  "XmlDocSummary": {
+    "prefix": "<summary",
+    "body": [
+      "/// <summary>",
+      "/// $1",
+      "/// </summary>"
+    ],
+    "description": "Xml comment documentation summary."
+  },
+  "XmlDocParam": {
+    "prefix": "<param ",
+    "body": [
+      "<param name=\"$1\">$2</param>"
+    ],
+    "description": "Xml comment documentation param description."
+  },
+  "XmlDocReturns": {
+    "prefix": "<returns",
+    "body": [
+      "<returns>",
+      "/// $1",
+      "/// </returns>"
+    ],
+    "description": "Xml comment documentation returns description."
+  },
+  "XmlDocParamref": {
+    "prefix": "<paramref",
+    "body": [
+      "<paramref name=\"$1\"/>"
+    ],
+    "description": "Xml comment documentation paramref."
+  },
+  "XmlDocException": {
+    "prefix": "<exception",
+    "body": [
+      "/// <exception cref=\"$1\">$2</exception>"
+    ],
+    "description": "Xml comment documentation exception."
+  },
+  "XmlDocPara": {
+    "prefix": "<para>",
+    "body": [
+      "<para>",
+      "    $1",
+      "</para>"
+    ],
+    "description": "Xml comment documentation paragraph."
+  },
+  "XmlDocCode": {
+    "prefix": "<code>",
+    "body": [
+      "<code>",
+      "///     $1",
+      "/// </code>"
+    ],
+    "description": "Xml comment documentation code."
+  },
+  "XmlDocExample": {
+    "prefix": "<exam",
+    "body": [
+      "<example>",
+      "///     $1",
+      "/// </example>"
+    ],
+    "description": "Xml comment documentation code."
+  },
+  "XmlDocTypeparam": {
+    "prefix": "<typeparam>",
+    "body": [
+      "<typeparam name=\"$1\">$2</typeparam>"
+    ],
+    "description": "Xml comment documentation typeparam."
+  },
+  "XmlDocTypeparam": {
+    "prefix": "<typeparamref",
+    "body": [
+      "<typeparamref name=\"$1\"/>"
+    ],
+    "description": "Xml comment documentation typeparamref."
+  }
+}
