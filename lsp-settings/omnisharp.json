@@ -1,0 +1,10 @@
+{
+  "csharp.inlayHints.types.enabled": true,
+  "omnisharp.useEditorFormattingSettings": false,
+  "csharp.inlayHints.parameters.enabled": true,
+  "omnisharp.organizeImportsOnFormat": true,
+  "omnisharp.loggingLevel": "error",
+  "csharp.showOmnisharpLogOnError": true,
+  "omnisharp.enableAsyncCompletion": true,
+  "omnisharp.sdkIncludePrereleases": false
+}
