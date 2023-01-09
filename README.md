@@ -16,8 +16,8 @@ I mainly use:
   - Vue
   - React
 - C#
-  - .NET (Core)
-  - ASP.NET Core
+  - .NET 6/7
+  - ASP.NET Core 6/7
 - Python 3
 - Lua
 - Swift
@@ -28,14 +28,13 @@ I mainly use:
 - PowerShell
 
 I use [tmux](https://en.wikipedia.org/wiki/Tmux) with LunarVim. I switch from one
-project to another using **tmux sessions**. I have removed the projects option
-from LunarVim dashboard, because I don't need it.
+project to another using **tmux sessions**.
 
 For tmux config details see my [dotfiles](https://github.com/PasiBergman/dotfiles).
 
 ## Setup/Dependencies
 
-- [Neovim v0.7+](https://github.com/neovim/neovim)
+- [Neovim v0.8+](https://github.com/neovim/neovim)
 - [LunarVim rolling](https://github.com/LunarVim/LunarVim)
 
 ### Installation (macOS)
@@ -64,7 +63,7 @@ brew install font-fira-code-nerd-font
 # Fast Node Manager & Node & NPM
 # --------------------------------------
 # Change the current NodeJS LTS version below
-NODE_VERSION="16.13.2"
+NODE_VERSION="18.12.1"
 fnm install $NODE_VERSION
 fnm default $NODE_VERSION
 fnm use $NODE_VERSION
@@ -90,7 +89,7 @@ luarocks install luacheck
 
 # Lua formatter
 # -------------
-STYLUA_VERSION="0.13.1"
+STYLUA_VERSION="0.15.3"
 cd ~/.local/bin
 wget https://github.com/JohnnyMorganz/StyLua/releases/download/${STYLUA_VERSION}/stylua-macos.zip
 unzip stylua-macos.zip
@@ -112,14 +111,16 @@ ln -s lvim-my lvim
 
 ### LunarVim configuration
 
-I have disabled the automatic installation of language servers.
 Start `lvim` and issue the following commands:
 
 ```vim
 :PackerSync
-:LspInstall jsonls yamlls vimls emmet_ls dockerls bashls
-:LspInstall volar omnisharp tsserver sumneko_lua pyright html cssls tailwindcss
-:LspInstall arduino_language_server
+```
+
+Check and modify installed language servers, debug adapters etc with `Mason`
+
+````vim
+:Mason
 ```
 
 ## Screenshots

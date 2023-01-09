@@ -1,4 +1,5 @@
 -- make sure server will always be installed even if the server is in skipped_servers list
+lvim.lsp.automatic_servers_installation = false
 lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
   "bicep",
@@ -7,11 +8,18 @@ lvim.lsp.installer.setup.ensure_installed = {
   "pyright",
   "sumneko_lua",
   "tsserver",
-  "volar",
 }
 
 -- OmniSharp custom configuration
 require "user.languages.lsp.omnisharp"
+
+if vim.fn.glob ".vetur*" ~= "" then
+  -- Vetur instead of Volar
+  lvim.lsp.installer.setup.ensure_installed = vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "vuels" })
+  require "user.languages.lsp.vetur"
+else
+  lvim.lsp.installer.setup.ensure_installed = vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "volar" })
+end
 
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)
