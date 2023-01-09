@@ -1,3 +1,8 @@
+-- Return if not a C#/.NET solution or project
+if vim.fn.glob "*.sln" == "" and vim.fn.glob "*.csproj" == "" then
+  return
+end
+
 local dap_status_ok, dap = pcall(require, "dap")
 if not dap_status_ok then
   return
@@ -17,7 +22,7 @@ end
 --
 dap.adapters.coreclr = {
   type = "executable",
-  command = vim.fn.expandcmd "~/.local/share/nvim/mason/packages/netcoredbg/netcoredbg",
+  command = vim.fn.expand "$HOME/.local/share/nvim/mason/packages/netcoredbg/netcoredbg",
   args = { "--interpreter=vscode" },
 }
 

@@ -120,7 +120,7 @@ lvim.plugins = {
   },
   --
   -- fidget.nvim: Standalone UI for nvim-lsp progress.
-  --
+  --[[
   {
     "j-hui/fidget.nvim",
     event = "BufRead",
@@ -128,7 +128,7 @@ lvim.plugins = {
       require("fidget").setup {}
     end,
   },
-  --
+  --]]
   -- Undotree
   --
   {
