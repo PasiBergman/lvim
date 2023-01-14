@@ -101,11 +101,22 @@ lvim.plugins = {
   },
   --
   -- Github Copilot
-  --
+  --[[
   {
     "github/copilot.vim",
     config = function()
       require("user.plugins.copilot").config_vim()
+    end,
+  },
+  --]]
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "VimEnter",
+    config = function()
+      vim.defer_fn(function()
+        require("user.plugins.copilot").config_lua()
+      end, 100)
     end,
   },
   --
@@ -120,7 +131,7 @@ lvim.plugins = {
   },
   --
   -- fidget.nvim: Standalone UI for nvim-lsp progress.
-  --[[
+  --
   {
     "j-hui/fidget.nvim",
     event = "BufRead",
@@ -128,7 +139,7 @@ lvim.plugins = {
       require("fidget").setup {}
     end,
   },
-  --]]
+  --
   -- Undotree
   --
   {

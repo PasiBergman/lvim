@@ -22,4 +22,51 @@ Copilot.config_vim = function()
   vim.defer_fn(copilot_hl_func, 1000)
 end
 
+Copilot.config_lua = function()
+  local result_ok, copilot = pcall(require, "copilot")
+  if not result_ok then
+    return
+  end
+
+  copilot.setup {
+    panel = {
+      enabled = true,
+      auto_refresh = false,
+      keymap = {
+        jump_prev = "<C-j>",
+        jump_next = "<C-k>",
+        accept = "<C-a>",
+        refresh = "gr",
+        open = "<C-CR>",
+      },
+    },
+    suggestion = {
+      enabled = true,
+      auto_trigger = true,
+      debounce = 75,
+      keymap = {
+        accept = "<C-a>",
+        accept_word = false,
+        accept_line = false,
+        next = "<C-j>",
+        prev = "<C-k>",
+        dismiss = "<C-d>",
+      },
+    },
+    filetypes = {
+      yaml = false,
+      markdown = false,
+      help = false,
+      gitcommit = false,
+      gitrebase = false,
+      hgcommit = false,
+      svn = false,
+      cvs = false,
+      ["."] = false,
+    },
+    copilot_node_command = "node", -- Node.js version must be > 16.x
+    server_opts_overrides = {},
+  }
+end
+
 return Copilot
