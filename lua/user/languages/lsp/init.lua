@@ -4,7 +4,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
   "bicep",
   "jsonls",
-  "omnisharp",
   "pyright",
   "sumneko_lua",
   "tsserver",
@@ -12,14 +11,10 @@ lvim.lsp.installer.setup.ensure_installed = {
 
 -- OmniSharp custom configuration
 require "user.languages.lsp.omnisharp"
-
-if vim.fn.glob ".vetur*" ~= "" then
-  -- Vetur instead of Volar
-  lvim.lsp.installer.setup.ensure_installed = vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "vuels" })
-  require "user.languages.lsp.vetur"
-else
-  lvim.lsp.installer.setup.ensure_installed = vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { "volar" })
-end
+-- Vue custom configuration
+require "user.languages.lsp.vue"
+-- Emmet ls custom configuration
+require "user.languages.lsp.emmetls"
 
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)
