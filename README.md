@@ -7,7 +7,7 @@
 
 ## Usage
 
-![LunarVim](./assets/lvim-config-lunarvim.png)
+![LunarVim](./assets/lunarvim.png)
 
 I mainly use:
 
@@ -20,9 +20,8 @@ I mainly use:
   - ASP.NET Core 6/7
 - Python 3
 - Lua
-- Swift
-  - iOS/iPadOS/macOS
 - HTML & CSS
+- Astro
 - Markdown & JSON & YAML
 - Bash / Zsh / POSIX
 - PowerShell
@@ -35,7 +34,7 @@ For tmux config details see my [dotfiles](https://github.com/PasiBergman/dotfile
 ## Setup/Dependencies
 
 - [Neovim v0.8+](https://github.com/neovim/neovim)
-- [LunarVim rolling](https://github.com/LunarVim/LunarVim)
+- [LunarVim v1.2](https://github.com/LunarVim/LunarVim)
 
 ### Installation (macOS)
 
@@ -96,10 +95,10 @@ unzip stylua-macos.zip
 rm stylua-macos.zip
 chmod +x stylua
 
-# LunarVim (rolling)
+# LunarVim v1.2
 # ------------------
-LVBRANCH=rolling \
-  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+LV_BRANCH='release-1.2/neovim-0.8' \
+  bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)
 
 # My LunarVim configuration
 # -------------------------
@@ -119,7 +118,7 @@ Start `lvim` and issue the following commands:
 
 Check and modify installed language servers, debug adapters etc with `Mason`
 
-````vim
+```vim
 :Mason
 ```
 
@@ -134,12 +133,12 @@ Top row in the screenshots is tmux status bar, not LunarVim.
 
 TypeScript
 
-![TypeScript](./assets/lvim-config-ts.png)
+![TypeScript](./assets/lunarvim-typescript.png)
 
 Vue
 
-![Vue](./assets/lvim-config-vue.png)
+![Vue](./assets/lunarvim-vue.png)
 
 C#
 
-![C#](./assets/lvim-config-cs.png)
+![C#](./assets/lunarvim-dotnet.png)
