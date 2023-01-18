@@ -9,6 +9,8 @@ Lualine.config = function()
   -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
   if lvim.colorscheme == "nordic" then
     lvim.builtin.lualine.options.theme = "nord"
+  elseif lvim.colorscheme == "tokyonight" then
+    lvim.builtin.lualine.options.theme = "tokyonight"
   else
     lvim.builtin.lualine.options.theme = "auto"
   end
