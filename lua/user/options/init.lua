@@ -1,5 +1,7 @@
 vim.opt.relativenumber = true
 
+vim.go.termguicolors = true
+
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "nordic"
