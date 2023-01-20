@@ -49,6 +49,7 @@ lvim.plugins = {
   --
   -- Themes
   --
+  --[[ Using Tokyonight for now
   {
     "andersevenrud/nordic.nvim",
     config = function()
@@ -58,6 +59,7 @@ lvim.plugins = {
       return lvim.colorscheme == "nordic"
     end,
   },
+  --]]
   {
     "Hoffs/omnisharp-extended-lsp.nvim",
   },
@@ -163,5 +165,31 @@ lvim.plugins = {
       end
     end,
     --]]
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup(
+        { "css", "scss", "sass", "html", "javascript", "lua", "vue", "astro", "typescriptreact", "javascriptreact" },
+        {
+          RGB = true, -- #RGB hex codes
+          RRGGBB = true, -- #RRGGBB hex codes
+          RRGGBBAA = true, -- #RRGGBBAA hex codes
+          rgb_fn = true, -- CSS rgb() and rgba() functions
+          hsl_fn = true, -- CSS hsl() and hsla() functions
+          css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+          css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        }
+      )
+    end,
+  },
+  {
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
   },
 }
