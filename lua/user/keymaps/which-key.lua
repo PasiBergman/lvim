@@ -7,6 +7,15 @@ lvim.builtin.which_key.mappings["t"] = {
   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+  t = { "<cmd>TroubleToggle<cr>", "Trouble Toggle" },
+}
+
+lvim.builtin.which_key.mappings["T"] = {
+  name = "+Terminal",
+  T = { "<cmd>ToggleTerm direction=float<cr>", "Terminal float" },
+  h = { "<cmd>ToggleTerm direction=horizontal<cr>", "Terminal horizontal" },
+  v = { "<cmd>ToggleTerm direction=vertical<cr>", "Terminal vertical" },
+  i = { "<cmd>TSConfigInfo<cr>", "Treesitter info" },
 }
 
 -- Which-key: Quickfix

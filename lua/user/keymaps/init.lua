@@ -18,6 +18,11 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- override a default keymapping
 -- lvim.keys.normal_mode["<C-q>"] = ":q<cr>" -- or vim.keymap.set("n", "<C-q>", ":q<cr>" )
 
+vim.keymap.set("n", "<C-Up>", ":resize -5<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Down>", ":resize +5<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -8<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +8<cr>", { noremap = true, silent = true })
+
 -- Keep centered
 vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true })
 vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true })

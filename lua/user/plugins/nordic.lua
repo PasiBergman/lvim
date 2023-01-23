@@ -1,6 +1,12 @@
+local M = {}
 -- Fixes for red-green colorblind
 --
-if lvim.colorscheme == "nordic" then
+--
+M.nordic_changes = function()
+  if vim.g.colors_name ~= "nordic" or not lvim.colorblind_mode then
+    return
+  end
+
   vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { foreground = "#a9b1d6", background = "#2e3440" })
   vim.api.nvim_set_hl(0, "NvimTreeWinSeparator", { foreground = "#16161e", background = "#2e3440" })
 
@@ -30,3 +36,5 @@ if lvim.colorscheme == "nordic" then
   vim.api.nvim_set_hl(0, "IlluminatedWordRead", { background = "#3b4252" })
   vim.api.nvim_set_hl(0, "IlluminatedWordText", { background = "#3b4252" })
 end
+
+return M

@@ -6,6 +6,11 @@ lvim.log.level = "warn"
 lvim.format_on_save = true
 -- lvim.colorscheme = "nordic"
 lvim.colorscheme = "tokyonight"
+-- Custom property for colorblind mode
+-- See ./lua/user/commands/autocommands.lua
+-- and ./lua/user/plugins/tokyonight.lua
+-- and ./lua/user/plugins/nordic.lua
+lvim.colorblind_mode = true
 
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
