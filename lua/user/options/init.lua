@@ -3,7 +3,14 @@ vim.opt.relativenumber = true
 vim.go.termguicolors = true
 
 lvim.log.level = "warn"
-lvim.format_on_save = true
+
+lvim.format_on_save = {
+  enabled = true,
+  pattern = "*",
+  timeout = 1500,
+  filter = require("lvim.lsp.utils").formatting_filter,
+}
+
 -- lvim.colorscheme = "nordic"
 lvim.colorscheme = "tokyonight"
 -- Custom property for colorblind mode
