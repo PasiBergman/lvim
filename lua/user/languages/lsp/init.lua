@@ -5,7 +5,7 @@ lvim.lsp.installer.setup.ensure_installed = {
   "bicep",
   "jsonls",
   "pyright",
-  "sumneko_lua",
+  "lua_ls",
   "tsserver",
 }
 

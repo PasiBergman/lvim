@@ -36,7 +36,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "comment",
   "css",
   "dockerfile",
-  "gitignore",
   "html",
   "java",
   "java",

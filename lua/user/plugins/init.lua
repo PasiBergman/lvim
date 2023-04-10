@@ -26,8 +26,7 @@ lvim.plugins = {
   --
   {
     "folke/trouble.nvim",
-    requires = {
-      "kyazdani42/nvim-web-devicons",
+    dependencies = {
       "nvim-telescope/telescope.nvim",
     },
     config = function()
@@ -44,7 +43,7 @@ lvim.plugins = {
       require("user.plugins.harpoon").config()
     end,
     event = "BufWinEnter",
-    requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" },
   },
   --
   -- Themes
@@ -79,7 +78,7 @@ lvim.plugins = {
   },
   {
     "David-Kunz/cmp-npm",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
     },
     config = function()
@@ -96,7 +95,7 @@ lvim.plugins = {
   {
     "folke/todo-comments.nvim",
     event = "BufRead",
-    requires = "nvim-lua/plenary.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
     config = function()
       require("user.plugins.todo-comments").config()
     end,
@@ -185,7 +184,7 @@ lvim.plugins = {
   },
   {
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
       require("nvim-surround").setup {
         -- Configuration here, or leave empty to use defaults
