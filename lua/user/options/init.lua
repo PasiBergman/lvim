@@ -37,8 +37,6 @@ lvim.builtin.treesitter.ensure_installed = {
   "css",
   "dockerfile",
   "html",
-  "java",
-  "java",
   "javascript",
   "jsdoc",
   "json",
@@ -57,5 +55,5 @@ lvim.builtin.treesitter.ensure_installed = {
   "yaml",
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = { "haskell", "java" }
 lvim.builtin.treesitter.highlight.enable = true

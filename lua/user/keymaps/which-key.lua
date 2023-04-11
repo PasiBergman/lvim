@@ -1,3 +1,13 @@
+-- Which-key: AI (Copilot, ...)
+lvim.builtin.which_key.mappings["a"] = {
+  name = "+A.I. (Copilot)",
+  s = { "<cmd>Copilot suggestion<cr>", "Copilot: toggle suggestions " },
+  p = { "<cmd>Copilot panel<cr>", "Copilot: toggle panel" },
+  c = { "<cmd>Copilot toggle<cr>", "Copilot: toggle" },
+  S = { "<cmd>Copilot status<cr>", "Copilot: Status" },
+  v = { "<cmd>Copilot version<cr>", "Copilot: version" },
+}
+
 -- Which-key: Trouble
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
@@ -34,6 +44,14 @@ lvim.builtin.which_key.mappings["q"] = {
     end,
     "Item...",
   },
+}
+
+lvim.builtin.which_key.mappings["u"] = {
+  name = "UndoTree",
+  t = { "<cmd>UndotreeToggle<cr>", "Toggle" },
+  o = { "<cmd>UndotreeShow<cr>", "Open" },
+  c = { "<cmd>UndotreeClose<cr>", "Close" },
+  f = { "<cmd>UndotreeFocus<cr>", "Focus" },
 }
 
 -- Which-key: +Search
