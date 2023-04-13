@@ -15,6 +15,8 @@ require "user.languages.lsp.csharp"
 require "user.languages.lsp.vue"
 -- Emmet ls custom configuration
 require "user.languages.lsp.emmetls"
+-- Lua ls customm configuration
+require "user.languages.lsp.lua"
 
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)
