@@ -127,7 +127,6 @@ lvim.plugins = {
   --
   -- See lua/users/lsp/init.lua for configuration
   {
-    event = "BufRead",
     "Issafalcon/lsp-overloads.nvim",
   },
   --

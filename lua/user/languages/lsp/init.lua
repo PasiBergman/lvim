@@ -2,15 +2,15 @@
 lvim.lsp.automatic_servers_installation = false
 lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
-  "bicep",
   "jsonls",
   "pyright",
   "lua_ls",
   "tsserver",
+  "bicep",
 }
 
--- OmniSharp custom configuration
-require "user.languages.lsp.omnisharp"
+-- csharp-language-server (csharp_ls) / omniSharp custom configuration
+require "user.languages.lsp.csharp"
 -- Vue custom configuration
 require "user.languages.lsp.vue"
 -- Emmet ls custom configuration
@@ -20,19 +20,18 @@ require "user.languages.lsp.emmetls"
 lvim.lsp.on_attach_callback = function(client, _)
   if client.server_capabilities.signatureHelpProvider then
     local status_ok, lsp_overloads = pcall(require, "lsp-overloads")
-    if not status_ok then
-      return
+    if status_ok then
+      -- https://github.com/Issafalcon/lsp-overloads.nvim#configuration
+      lsp_overloads.setup(client, {
+        -- Defaults
+        keymaps = {
+          next_signature = "<C-j>",
+          previous_signature = "<C-k>",
+          next_parameter = "<C-l>",
+          previous_parameter = "<C-h>",
+        },
+      })
     end
-    -- https://github.com/Issafalcon/lsp-overloads.nvim#configuration
-    lsp_overloads.setup(client, {
-      -- Defaults
-      keymaps = {
-        next_signature = "<C-j>",
-        previous_signature = "<C-k>",
-        next_parameter = "<C-l>",
-        previous_parameter = "<C-h>",
-      },
-    })
   end
 end
 
