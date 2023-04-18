@@ -150,12 +150,12 @@ lvim.plugins = {
     end,
   },
   --
-  -- EditorConfig support
+  -- EditorConfig support - now native in Neovim 0.9+
   --
-  {
-    "gpanders/editorconfig.nvim",
-    event = "BufRead",
-    --[[
+  -- {
+  --   "gpanders/editorconfig.nvim",
+  --   event = "BufRead",
+  --[[
     config = function()
       -- Custom properties can be added through the properties table:
       require('editorconfig').properties.foo = function(bufnr, val)
@@ -163,7 +163,7 @@ lvim.plugins = {
       end
     end,
     --]]
-  },
+  -- },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
