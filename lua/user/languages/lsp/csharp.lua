@@ -1,11 +1,15 @@
 --
 -- Use "omnisharp" or "csharp-language-server"
 --
-local csharp_ls = "omnisharp"
-lvim.lsp.installer.setup.ensure_installed = vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { csharp_ls })
+local enabled_csharp_ls = "omnisharp"
+local disabled_csharp_ls = "csharp_ls"
+lvim.lsp.installer.setup.ensure_installed =
+  vim.list_extend(lvim.lsp.installer.setup.ensure_installed, { enabled_csharp_ls })
+lvim.lsp.automatic_configuration.skipped_servers =
+  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { disabled_csharp_ls })
 
 -- Configure omnisharp
-if csharp_ls == "omnisharp" then
+if enabled_csharp_ls == "omnisharp" then
   local omnisharp_opts = {}
   local status_ok, omnisharp_extended = pcall(require, "omnisharp_extended")
   if status_ok then
@@ -20,14 +24,13 @@ if csharp_ls == "omnisharp" then
     }
   end
   require("lvim.lsp.manager").setup("omnisharp", omnisharp_opts)
+  --
+  -- OmniSharp is used and configured. Return.
   return
 end
 
 --
 -- Omnisharp not used
 --
-lvim.lsp.automatic_configuration.skipped_servers =
-  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "omnisharp" })
-
 local csharp_ls_opts = {}
-require("lspconfig")["csharp_ls"].setup(csharp_ls_opts)
+require("lspconfig")[enabled_csharp_ls].setup(csharp_ls_opts)

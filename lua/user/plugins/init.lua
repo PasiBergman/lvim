@@ -113,7 +113,7 @@ lvim.plugins = {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
-    event = "VimEnter",
+    event = "BufWinEnter",
     config = function()
       vim.defer_fn(function()
         require("user.plugins.copilot").config_lua()
@@ -149,21 +149,6 @@ lvim.plugins = {
       vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
     end,
   },
-  --
-  -- EditorConfig support - now native in Neovim 0.9+
-  --
-  -- {
-  --   "gpanders/editorconfig.nvim",
-  --   event = "BufRead",
-  --[[
-    config = function()
-      -- Custom properties can be added through the properties table:
-      require('editorconfig').properties.foo = function(bufnr, val)
-        vim.b[bufnr].foo = val
-      end
-    end,
-    --]]
-  -- },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -189,5 +174,30 @@ lvim.plugins = {
         -- Configuration here, or leave empty to use defaults
       }
     end,
+  },
+  --
+  -- Diffconflicts
+  -- https://www.youtube.com/watch?v=Pxgl3Wtf78Y
+  --[[
+  {
+    "whiteinge/diffconflicts",
+    event = "BufRead",
+  },
+  --]]
+  --
+  -- Diffview
+  -- https://www.youtube.com/watch?v=aJikrPnTOtIj
+  --[[
+  {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
+  },
+  --]]
+  --
+  -- Vim Fugitive
+  --
+  {
+    "tpope/vim-fugitive",
+    event = "WinEnter",
   },
 }
