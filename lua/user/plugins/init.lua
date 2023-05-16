@@ -200,4 +200,11 @@ lvim.plugins = {
     "tpope/vim-fugitive",
     event = "WinEnter",
   },
+  --
+  -- Dressing.nvim
+  -- https://github.com/stevearc/dressing.nvim
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+  },
 }
