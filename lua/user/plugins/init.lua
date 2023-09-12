@@ -134,6 +134,7 @@ lvim.plugins = {
   --
   {
     "j-hui/fidget.nvim",
+    version = "legacy",
     event = "BufRead",
     config = function()
       require("fidget").setup {}
@@ -205,6 +206,14 @@ lvim.plugins = {
   -- https://github.com/stevearc/dressing.nvim
   {
     "stevearc/dressing.nvim",
+    opts = {},
+  },
+  --
+  -- Hardtime.nvim
+  -- https://github.com/m4xshen/hardtime.nvim
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {},
   },
 }
